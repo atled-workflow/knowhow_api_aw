@@ -1,0 +1,15 @@
+description: >
+  フィルター<br>
+
+  ユーザーコード(externalId)、ユーザー名称(displayName)、ログインID(userName)、メールアドレス(emails)を絞り込むときに指定します。<br>
+
+  「externalId eq "{ユーザーコード}"」のように指定します。<br>
+
+  *使用できる演算子はeqのみになります。<br>
+
+  *検索結果が1000件を超えた場合、1000件まで応答する
+name: filter
+in: query
+schema:
+  type: string
+  example: externalId eq "user001"

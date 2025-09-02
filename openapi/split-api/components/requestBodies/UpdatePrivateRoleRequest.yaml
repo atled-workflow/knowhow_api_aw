@@ -1,0 +1,35 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+        - code
+        - name
+        - folderCode
+      type: object
+      properties:
+        id:
+          description: |
+            更新対象プライベートロールのID<br>
+            *「プライベートロール作成API」または「プライベートロール参照API」で取得した値を指定
+          type: integer
+      allOf:
+        - $ref: ../schemas/AddPrivateRoleRequest.yaml
+    example:
+      id: 999
+      code: prole01
+      importCode: prole01
+      name: プライベートロール
+      explanation: プライベートロール
+      folderCode: proleFolder
+      isWarnIfCandidateNotAssigned: false
+      candidateList:
+        entries:
+          - type: USER
+            userCode: user01
+          - type: ROLE
+            roleCode: srole01
+            roletype: SECTION
+      guidance:
+        subject: 件名
+        text: 本文

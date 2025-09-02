@@ -1,0 +1,39 @@
+content:
+  application/json:
+    schema:
+      required:
+        - condition
+      type: object
+      pattern: workflow.FindWorkflowTaskRequestModel
+      properties:
+        condition:
+          description: 回付情報タスクの検索条件
+          type: object
+          required:
+            - docId
+          pattern: workflow.WorkflowTaskConditionModel
+          properties:
+            docId:
+              description: 書類ID
+              type: integer
+            ruleStepCode:
+              description: ステップコード
+              type: string
+            ruleStepType:
+              description: |
+                ステップ種別<br>
+                指定可能な値<br>
+                |パラメータ|説明|
+                |----|----|
+                |CREATE|作成ステップ|
+                |APPLY|申請ステップ|
+                |APPROVE|承認ステップ|
+                |CONFIRM|報告ステップ|
+                |READ|閲覧ステップ|
+              type: string
+              pattern: rule.EnumRuleStepType
+    example:
+      condition:
+        docId: 999
+        ruleStepCode: STEP1
+        ruleStepType: APPLY

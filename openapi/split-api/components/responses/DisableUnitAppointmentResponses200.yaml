@@ -1,0 +1,45 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/UnitAppointmentResponse.yaml
+    examples:
+      正常:
+        value:
+          unitAppointment:
+            id: 999
+            userCode: user01
+            unitCode: unit01
+            sectionRoleCode: srole01
+            availableDateFrom: 1900-01-01 00:00:00 JST
+            availableDateTo: 2024-12-31 00:00:00 JST
+            sortNo: null
+            criterionDate: null
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          unitAppointment:
+            id: null
+            userCode: null
+            unitCode: null
+            sectionRoleCode: null
+            availableDateFrom: null
+            availableDateTo: null
+            sortNo: null
+            criterionDate: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

@@ -1,0 +1,9 @@
+description: |
+  フィールド値タイプ<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |FIELD|書類のフィールド|
+  |LISTNAME1～20|件名項目１～２０|
+type: string
+pattern: doc.EnumFieldValueType

@@ -1,0 +1,18 @@
+type: object
+pattern: org.UniversalRoleModel
+properties:
+  code:
+    description: ユニバーサルロールコード
+    type: string
+  importCode:
+    description: インポートコード
+    type: string
+  name:
+    description: ユニバーサルロール名称
+    type: string
+  explanation:
+    description: 説明
+    type: string
+  folderCode:
+    description: ユニバーサルロールフォルダコード
+    type: string

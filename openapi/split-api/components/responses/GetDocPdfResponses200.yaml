@@ -1,0 +1,31 @@
+description: Successful response
+content:
+  application/octet-stream:
+    schema:
+      description: |
+        PDFファイルの内容<br>
+        *バイナリデータ
+    examples:
+      正常:
+        value: '{PDFファイルの内容(バイナリデータ)}'
+  application/json:
+    examples:
+      パラメータが不正:
+        value:
+          docPdf:
+            file:
+              name: null
+              key: null
+              id: null
+              size: null
+              contentType: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

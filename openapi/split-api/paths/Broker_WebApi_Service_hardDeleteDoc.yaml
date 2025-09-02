@@ -1,0 +1,23 @@
+post:
+  tags:
+    - DocAPI
+  summary: 書類物理削除
+  description: >-
+    論理削除済みの書類を物理削除します。<br>
+    論理削除を行う場合は「書類論理削除API」を参照してください。
+  operationId: hardDeleteDoc
+  requestBody:
+    $ref: ../components/requestBodies/docId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/ResultStatusResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

@@ -1,0 +1,111 @@
+type: object
+pattern: org.FindUserRequestModel
+properties:
+  condition:
+    required:
+      - criterionDate
+    description: ユーザー検索条件
+    type: object
+    pattern: org.UserConditionModel
+    properties:
+      code:
+        description: ユーザーコード
+        type: string
+      loginId:
+        description: ログインID
+        type: string
+      name:
+        description: ユーザー名
+        type: string
+      isAccountLock:
+        description: アカウントロックされているかどうか
+        type: boolean
+      unitCode:
+        description: 所属組織コード
+        type: string
+      sectionRoleCode:
+        description: 所有セクションロールコード
+        type: string
+      universalRoleCode:
+        description: 所有ユニバーサルロールコード
+        type: string
+      reserveItem1:
+        description: 拡張項目1
+        type: string
+      reserveItem2:
+        description: 拡張項目2
+        type: string
+      reserveItem3:
+        description: 拡張項目3
+        type: string
+      reserveItem4:
+        description: 拡張項目4
+        type: string
+      reserveItem5:
+        description: 拡張項目5
+        type: string
+      reserveItem6:
+        description: 拡張項目6
+        type: string
+      reserveItem7:
+        description: 拡張項目7
+        type: string
+      reserveItem8:
+        description: 拡張項目8
+        type: string
+      reserveItem9:
+        description: 拡張項目9
+        type: string
+      reserveItem10:
+        description: 拡張項目10
+        type: string
+      columnValueConditionList:
+        description: 任意検索条件一覧
+        type: object
+        pattern: org.UserColumnValueConditionListModel
+        properties:
+          entries:
+            description: 任意検索条件
+            type: array
+            items:
+              type: object
+              pattern: org.UserColumnValueConditionModel
+              properties:
+                column:
+                  description: |
+                    フィールド値タイプ<br>
+                    指定可能な値<br>
+                    |パラメータ|説明|
+                    |----|----|
+                    |Code|コード|
+                    |ImportId|インポートコード|
+                    |Name|名称|
+                    |LocalizedName|ローカル名称|
+                    |LocaleName|ロケール名|
+                    |Kana|カナ|
+                    |LoginId|ログインID|
+                    |MailAddress|メールアドレス|
+                    |StampName|印影名|
+                    |Remarks|備考|
+                    |AvailableDateFrom|運用開始日|
+                    |AvailableDateTo|運用終了日|
+                    |ReserveItem1～10|拡張項目1～10|
+                  type: string
+                  pattern: org.EnumUserFieldType
+                compareOperatorType:
+                  allOf:
+                    - $ref: ./compareOperatorType.yaml
+                value:
+                  description: 値
+                  type: string
+          logicalOperator:
+            description: |
+              任意検索全体のAND / OR<br>
+              *AND または OR を指定
+            type: string
+      criterionDate:
+        description: 基準日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$

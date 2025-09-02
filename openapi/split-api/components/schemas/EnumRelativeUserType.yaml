@@ -1,0 +1,11 @@
+description: |
+  ユーザータイプ<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |UNIT_APPOINTMENT|組織+ユーザ|
+  |UNIT|組織|
+  |USER|ユーザ|
+  |LOGIN_USER|ログインユーザ(WebAPI実行ユーザ)|
+type: string
+pattern: EnumRelativeUserType

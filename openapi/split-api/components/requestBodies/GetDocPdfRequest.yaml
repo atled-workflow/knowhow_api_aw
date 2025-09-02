@@ -1,0 +1,12 @@
+content:
+  application/json:
+    schema:
+      required:
+        - instructionList
+      allOf:
+        - $ref: ../schemas/GetDocPdfRequest.yaml
+    example:
+      instructionList:
+        entries:
+          - docId: 999
+            isInsertTrail: true

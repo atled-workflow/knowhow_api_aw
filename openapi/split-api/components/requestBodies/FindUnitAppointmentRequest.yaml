@@ -1,0 +1,19 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUnitAppointmentRequest.yaml
+    example:
+      condition:
+        userCode: user01
+        unitCode: unit01
+        unitDirection: ESCALATE
+        sectionRoleCode: srole01
+        isMainUnit: false
+        columnValueConditionList:
+          entries:
+            - column: UserName
+              compareOperatorType: LIKE
+              value: 寺崎
+          logicalOperator: AND
+        criterionDate: 2024-10-31 00:00:00 JST

@@ -1,0 +1,22 @@
+post:
+  tags:
+    - OrgAPI
+  summary: ユニバーサルロール参照
+  description: >-
+    ユニバーサルロールを参照します。
+  operationId: findUniversalRole
+  requestBody:
+    $ref: ../components/requestBodies/FindUniversalRoleRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/FindUniversalRoleResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

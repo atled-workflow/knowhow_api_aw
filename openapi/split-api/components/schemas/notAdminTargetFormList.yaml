@@ -1,0 +1,14 @@
+description: 対象フォーム一覧
+type: object
+pattern: org.notadmin.NotAdminTargetFormListModel
+properties:
+  entries:
+    description: フォームコードのリスト
+    type: array
+    items:
+      type: object
+      pattern: org.notadmin.NotAdminTargetFormModel
+      properties:
+        formCode:
+          description: フォームコード
+          type: string

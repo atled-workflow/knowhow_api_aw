@@ -1,0 +1,52 @@
+type: object
+pattern: workflow.ListWorkflowJournalResponseModel
+properties:
+  workflowJournalList:
+    description: 回付情報タスク検索結果
+    type: object
+    pattern: workflow.WorkflowJournalListModel
+    properties:
+      entries:
+        description: 回付情報タスク一覧
+        type: array
+        items:
+          type: object
+          pattern: workflow.WorkflowJournalModel
+          properties:
+            comment:
+              description: コメント
+              type: string
+            createDate:
+              description: 登録日時
+              type: string
+              pattern: >-
+                ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+                (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+            leadTime:
+              description: リードタイム
+              type: integer
+            docId:
+              description: 書類ID
+              type: integer
+            operator:
+              description: タスク処理者
+              allOf:
+                - $ref: ./commonOperatorModel.yaml
+            ruleEffector:
+              description: タスク作用
+              type: object
+              pattern: rule.RuleEffectotHeaderModel
+              properties:
+                name:
+                  description: 作用名称
+                  type: string
+                type:
+                  allOf:
+                    - $ref: ./effectorType.yaml
+            ruleStepHeader:
+              description: ステップ情報
+              allOf:
+                - $ref: ./ruleStepHeader.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

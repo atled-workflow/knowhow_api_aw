@@ -1,0 +1,150 @@
+type: object
+pattern: form.ListFormResponseModel
+properties:
+  formProject:
+    description: フォーム設定情報
+    type: object
+    pattern: form.FormProjectListModel
+    properties:
+      entries:
+        type: array
+        items:
+          type: object
+          pattern: form.FormProjectModel
+          properties:
+            name:
+              description: |
+                業務カテゴリ名称<br>
+              type: string
+            id:
+              description: |
+                業務カテゴリID<br>
+              type: integer
+            form:
+              description: フォーム
+              type: object
+              pattern: form.FormListModel
+              properties:
+                entries:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        description: フォーム名称
+                        type: string
+                      id:
+                        description: フォームID
+                        type: integer
+                      type:
+                        description: |
+                          フォーム種別<br>
+                          *MAIN / TEMPLATE
+                        type: string
+                        pattern: EnumFormType
+                      version:
+                        description: バージョン
+                        type: string
+                      fieldList:
+                        description: |
+                          フォームフィールド一覧<br>
+                          *空を出力。フォーム定義情報取得APIで表示。
+                        type: object
+                        pattern: form.FormFieldListModel
+                      explanation:
+                        description: 備考
+                        type: string
+                      minorVersion:
+                        description: マイナーバージョン
+                        type: integer
+                      majorVersion:
+                        description: メジャーバージョン
+                        type: integer
+                      code:
+                        description: フォームコード
+                        type: string
+                      projectCode:
+                        description: |
+                          業務カテゴリコード<br>
+                          *formProject/entries 配下の code と同じ
+                        type: string
+                      isForceAutoCalc:
+                        description: |
+                          書類保存時に再計算するかどうか<br>
+                          詳細タブ>動作設定 欄の「計算式設定」内のチェックボックス<br>
+                          チェックあり：true<br>
+                          チェックなし：false
+                        type: boolean
+                      isReferenceOnly:
+                        description: |
+                          関連書類専用フォームかどうか<br>
+                          *使用していないので、falseのみ出力
+                        type: boolean
+                      isInsertTrailRequired:
+                        description: |
+                          証跡PDF挿入を必須とするかどうか<br>
+                          PDFタブ>「挿入するタイミング」のラジオボタン<br>
+                          常に挿入する：true<br>
+                          PDFを作成する度に指定する：false
+                        type: boolean
+                      validityDateTo:
+                        description: 適用終了日
+                        type: string
+                        pattern: >-
+                          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+                          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+                      xwfFileName:
+                        description: XWFファイル名称
+                        type: string
+                      latestVersion:
+                        description: 最新バージョン
+                        type: string
+                      trailFormCode:
+                        description: 証跡PDFとして利用するフォームのフォームコード
+                        type: string
+                      insertTrailPosition:
+                        description: |
+                          証跡PDF挿入位置<br>
+                          PDFタブ>「挿入する位置」のラジオボタン<br>
+                          書類の前：FRONT<br>
+                          書類の後：BACK
+                        type: string
+                      validityDateFrom:
+                        description: 適用開始日
+                        type: string
+                        pattern: >-
+                          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+                          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+                      tableName:
+                        description: DBテーブル名一覧
+                        type: object
+                        pattern: form.FormTableNameListModel
+                        properties:
+                          entries:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                name:
+                                  description: |
+                                    DBテーブル名<br>
+                                    *表明細の内容も表示される
+                      isInsertTrail:
+                        description: |
+                          証跡PDFを挿入するかどうか<br>
+                          PDFタブ>「PDF作成時に証跡PDFを挿入する」内のチェックボックス<br>
+                          チェックあり：true<br>
+                          チェックなし：false
+                        type: boolean
+                      pageCount:
+                        description: フォーム構成ページ数
+                        type: integer
+            code:
+              description: 業務カテゴリコード
+              type: string
+            formCount:
+              description: 所属フォーム数
+              type: integer
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

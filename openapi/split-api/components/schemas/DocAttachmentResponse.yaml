@@ -1,0 +1,10 @@
+type: object
+pattern: doc.DocAttachmentResponseModel
+properties:
+  docAttachment:
+    description: 書類添付情報
+    allOf:
+      - $ref: ./docAttachment.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

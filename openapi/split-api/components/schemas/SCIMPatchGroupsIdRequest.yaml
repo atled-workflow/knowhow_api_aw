@@ -1,0 +1,36 @@
+type: object
+properties:
+  schemas:
+    description: |
+      スキーマ<br>
+      *"urn:ietf:params:scim:api:messages:2.0:PatchOp" 固定
+    type: string
+  Operations:
+    description: オペレーション
+    type: array
+    items:
+      type: object
+      properties:
+        op:
+          description: |
+            更新操作は以下が指定可能です。(大文字小文字は区別しません）<br>
+            追加(add)<br>
+            置換(replace)<br>
+            削除(remove)*<br>
+            *削除(remove)の操作はリソースの必須項目（externalId、displayName）に対して行うことはできません。<br>
+             必須指定の項目に削除(remove)の操作を行った場合はエラーレスポンスが返却されます。
+          type: string
+        path:
+          description: |
+            変更対象の属性のパス<br>
+            指定可能な値<br>
+            |path|AW項目|op(Add)|op(Replace)|op(Remove)|
+            |----|----|----|----|----|
+            |externalId|組織コード|valueで指定した値で更新します|valueで指定した値で更新します|指定できません|
+            |displayName|組織名称|〃|〃|〃|
+          type: string
+        value:
+          description: |
+            新しい値<br>
+            pathで指定した属性の更新する値
+          type: string

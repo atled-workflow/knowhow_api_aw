@@ -1,0 +1,41 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/UniversalRoleResponse.yaml
+    examples:
+      正常:
+        value:
+          universalRole:
+            name: ユニバーサルロール
+            explanation: ユニバーサルロール
+            code: urole01
+            folderCode: null
+            importCode: urole01
+            id: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          universalRole:
+            name: null
+            explanation: null
+            code: null
+            folderCode: null
+            importCode: null
+            id: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

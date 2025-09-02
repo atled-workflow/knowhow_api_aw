@@ -1,0 +1,27 @@
+type: object
+pattern: doc.DocPdfRequestModel
+properties:
+  instructionList:
+    description: 書類PDF生成情報のリスト
+    required:
+      - entries
+    type: object
+    pattern: doc.DocPdfInstructionListModel
+    properties:
+      entries:
+        description: 書類PDF生成情報
+        type: array
+        items:
+          type: object
+          pattern: doc.DocPdfInstructionModel
+          required:
+            - docId
+          properties:
+            docId:
+              description: 書類ID
+              type: string
+            isInsertTrail:
+              description: |
+                証跡PDFを挿入するかどうか<br>
+                *true または false
+              type: boolean

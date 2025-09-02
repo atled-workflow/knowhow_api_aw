@@ -1,0 +1,23 @@
+type: object
+pattern: site.ListProjectResponseModel
+properties:
+  projectList:
+    description: 業務カテゴリ検索結果
+    type: object
+    properties:
+      entries:
+        description: 業務カテゴリのリスト
+        type: array
+        pattern: site.ListProjectModel
+        items:
+          type: object
+          properties:
+            name:
+              description: 業務カテゴリ名称
+              type: string
+            code:
+              description: 業務カテゴリコード
+              type: string
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

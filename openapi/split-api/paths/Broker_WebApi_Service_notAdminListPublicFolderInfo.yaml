@@ -1,0 +1,23 @@
+post:
+  tags:
+    - NotAdminAPI
+  summary: （管理者権限不要）公開フォルダ・公開フォーム取得
+  description:
+    API 実行ユーザーの公開フォルダ・公開フォーム一覧を取得する API です。<br>
+    リクエストボディの userCode に API 実行ユーザーが代理申請権限を持つユーザーを指定した場合、レスポンスに含まれる公開フォームは代理申請権限のフォーム、回付ルールの条件に合うものに限られます。
+  operationId: notAdminListPublicFolderInfo
+  requestBody:
+    $ref: ../components/requestBodies/NotAdminListPublicFolderInfoRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/NotAdminListPublicFolderInfoResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

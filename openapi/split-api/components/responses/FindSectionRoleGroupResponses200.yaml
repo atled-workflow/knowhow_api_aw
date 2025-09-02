@@ -1,0 +1,40 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindSectionRoleGroupResponse.yaml
+    examples:
+      正常:
+        value:
+          sectionRoleGroupList:
+            entries:
+              - name: 取締役
+                id: 999
+                explanation: 説明
+                code: srolegroup01
+                sortNo: 1
+                roleCodeList:
+                  entries:
+                    - code: srole01
+                    - code: srole02
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          sectionRoleGroupList:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

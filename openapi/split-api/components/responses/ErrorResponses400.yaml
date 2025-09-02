@@ -1,0 +1,12 @@
+description: Error response(Bad Request)
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        error_code:
+          type: integer
+          example: 400
+        error_message:
+          type: string
+          example: '{エラーメッセージ}'

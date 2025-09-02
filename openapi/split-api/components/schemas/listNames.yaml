@@ -1,0 +1,44 @@
+description: 件名項目
+type: object
+pattern: doc.DocListNamesModel
+properties:
+  listNames1:
+    type: string
+  listNames2:
+    type: string
+  listNames3:
+    type: string
+  listNames4:
+    type: string
+  listNames5:
+    type: string
+  listNames6:
+    type: string
+  listNames7:
+    type: string
+  listNames8:
+    type: string
+  listNames9:
+    type: string
+  listNames10:
+    type: string
+  listNames11:
+    type: string
+  listNames12:
+    type: string
+  listNames13:
+    type: string
+  listNames14:
+    type: string
+  listNames15:
+    type: string
+  listNames16:
+    type: string
+  listNames17:
+    type: string
+  listNames18:
+    type: string
+  listNames19:
+    type: string
+  listNames20:
+    type: string

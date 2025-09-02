@@ -1,0 +1,13 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindDelegationAppointmentRequest.yaml
+    example:
+      condition:
+        fromUnitCode: unit01
+        fromUserCode: user01
+        toUserCode: user02
+        targetFormCode: form01
+        targetRuleCode: rule01
+        criterionDate: 2024-10-31 00:00:00 JST

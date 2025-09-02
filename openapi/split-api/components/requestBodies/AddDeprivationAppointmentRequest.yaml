@@ -1,0 +1,18 @@
+content:
+  application/json:
+    schema:
+      required:
+        - userCode
+      allOf:
+        - $ref: ../schemas/AddDeprivationAppointmentRequest.yaml
+    example:
+      userCode: user01
+      targetFormList:
+        entries:
+          - formCode: form01
+      targetRuleList:
+        entries:
+          - ruleCode: rule01
+      availableDateFrom: 1900-01-01 00:00:00 JST
+      avalableDateTo: 2060-12-31 00:00:00 JST
+      criterionDate: 2024-10-31 00:00:00 JST

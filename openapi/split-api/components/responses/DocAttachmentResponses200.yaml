@@ -1,0 +1,127 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/DocAttachmentResponse.yaml
+    examples:
+      正常:
+        value:
+          docAttachment:
+            name: 見積書
+            id: 9999
+            type: URL
+            size: null
+            path: null
+            explanation: null
+            ruleStepHeader:
+              name: null
+              type: null
+              index: null
+              code: null
+            storageFile:
+              name: null
+              key: null
+              id: null
+              size: null
+              contentType: null
+            url: https://ateled.jp/AgileWorks/Broker/Picus
+            operationInfo:
+              registrationDate: 2024-10-31 00:00:00 JST
+              modifyDate: 2024-10-31 00:00:00 JST
+              registrantOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifierOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifier:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              registrant:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+            docId: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          docAttachment:
+            name: 見積書
+            id: null
+            type: null
+            size: null
+            path: null
+            explanation: null
+            ruleStepHeader:
+              name: null
+              type: null
+              index: null
+              code: null
+            storageFile:
+              name: null
+              key: null
+              id: null
+              size: null
+              contentType: null
+            url: null
+            operationInfo:
+              registrationDate: null
+              modifyDate: null
+              registrantOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifierOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifier:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              registrant:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+            docId: null
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

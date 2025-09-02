@@ -1,0 +1,38 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindPrivateRoleAppointmentResponse.yaml
+    examples:
+      正常:
+        value:
+          privateRoleAppointmentList:
+            entries:
+              - id: 999
+                criterionDate: 1900-01-01 00:00:00 JST
+                userCode: user01
+                availableDateTo: 2060-12-31 00:00:00 JST
+                privateRoleCode: prole01
+                availableDateFrom: 1900-01-01 00:00:00 JST
+                candidateCode: user02
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          privateRoleAppointmentList:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

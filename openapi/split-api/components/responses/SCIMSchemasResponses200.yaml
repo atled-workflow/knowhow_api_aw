@@ -1,0 +1,191 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SCIMSchemasResponse.yaml
+    example:
+      value:
+        schemas:
+          - urn:ietf:params:scim:api:messages:2.0:ListResponse
+        totalResults: 2
+        Resources:
+          - id: urn:ietf:params:scim:schemas:core:2.0:User
+            name: User
+            description: User
+            attributes:
+              - name: id
+                type: integer
+                multiValued: false
+                description: id
+                mutability: readOnly
+                required: false
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: externalId
+                type: string
+                multiValued: false
+                description: externalId
+                mutability: readWrite
+                required: true
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: userName
+                type: string
+                multiValued: false
+                description: userName
+                mutability: readWrite
+                required: true
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: displayName
+                type: string
+                multiValued: false
+                description: displayName
+                mutability: readWrite
+                required: true
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: locale
+                type: string
+                multiValued: false
+                description: locale
+                mutability: writeOnly
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: never
+              - name: active
+                type: boolean
+                multiValued: false
+                description: active
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: password
+                type: string
+                multiValued: false
+                description: password
+                mutability: writeOnly
+                required: false
+                caseExact: true
+                uniqueness: none
+                returned: never
+              - name: emails
+                type: complex
+                multiValued: false
+                description: emails
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: emails.value
+                type: string
+                multiValued: false
+                description: emails.value
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: emails.primary
+                type: boolean
+                multiValued: false
+                description: emails.primary
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: groups
+                type: complex
+                multiValued: false
+                description: groups
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: groups.value
+                type: string
+                multiValued: false
+                description: groups.value
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: groups.display
+                type: string
+                multiValued: false
+                description: groups.deisplay
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: roles
+                type: complex
+                multiValued: false
+                description: roles
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+              - name: roles.value
+                type: string
+                multiValued: false
+                description: roles.value
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: roles.display
+                type: string
+                multiValued: false
+                description: roles.display
+                mutability: readWrite
+                required: false
+                caseExact: false
+                uniqueness: none
+                returned: always
+          - id: urn:ietf:params:scim:schemas:core:2.0:Group
+            name: Group
+            description: Group
+            attributes:
+              - name: id
+                type: integer
+                multiValued: false
+                description: id
+                mutability: readOnly
+                required: false
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: externalId
+                type: string
+                multiValued: false
+                description: externalId
+                mutability: readWrite
+                required: true
+                caseExact: false
+                uniqueness: server
+                returned: always
+              - name: displayName
+                type: string
+                multiValued: false
+                description: displayName
+                mutability: readWrite
+                required: true
+                caseExact: false
+                uniqueness: none
+                returned: always

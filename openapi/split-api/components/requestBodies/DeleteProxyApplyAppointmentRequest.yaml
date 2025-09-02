@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: org.ProxyApplicationAppointmentModel
+      properties:
+        id:
+          description: |
+            削除対象代理申請のID<br>
+            *「代理申請作成API」または「代理申請参照API」で取得した値を指定
+          type: integer
+          example: 999

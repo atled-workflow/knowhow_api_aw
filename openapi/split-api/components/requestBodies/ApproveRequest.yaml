@@ -1,0 +1,13 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - ruleStepCode
+      allOf:
+        - $ref: ../schemas/ApproveRequest.yaml
+    example:
+      docId: 999
+      operatorCode: user002
+      ruleStepCode: STEP3
+      comment: 承認

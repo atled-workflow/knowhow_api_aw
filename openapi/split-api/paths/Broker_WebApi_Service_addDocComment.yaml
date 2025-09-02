@@ -1,0 +1,22 @@
+post:
+  tags:
+    - DocAPI
+  summary: 書類メモ追加
+  description: >-
+    書類のメモを追加します。
+  operationId: addDocComment
+  requestBody:
+    $ref: ../components/requestBodies/AddDocCommentRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/AddDocCommentResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

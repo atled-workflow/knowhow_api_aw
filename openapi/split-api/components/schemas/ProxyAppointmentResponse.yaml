@@ -1,0 +1,15 @@
+type: object
+pattern: org.ProxyAppointmentResponseModel
+properties:
+  proxyAppointment:
+    description: 代理承認情報
+    type: object
+    properties:
+      id:
+        description: 代理承認のid
+        type: integer
+    allOf:
+      - $ref: ./AddProxyAppointmentRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

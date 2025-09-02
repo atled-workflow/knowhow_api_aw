@@ -1,0 +1,30 @@
+type: object
+pattern: org.SectionRoleGroupModel
+properties:
+  code:
+    description: セクションロールグループコード
+    type: string
+  name:
+    description: セッションロールグループ名称
+    type: string
+  sortNo:
+    description: ソート順序
+    type: string
+  explanation:
+    description: 説明
+    type: string
+  roleCodeList:
+    description: 所属しているセクションロールコードのリスト
+    type: object
+    pattern: common.CodeListModel
+    properties:
+      entries:
+        description: セクションロールコード情報
+        type: array
+        items:
+          type: object
+          pattern: commonCodeModel
+          properties:
+            code:
+              description: セクションロールコード
+              type: string

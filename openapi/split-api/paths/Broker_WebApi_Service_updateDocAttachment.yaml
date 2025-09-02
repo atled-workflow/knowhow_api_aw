@@ -1,0 +1,22 @@
+post:
+  tags:
+    - DocAPI
+  summary: 書類添付情報更新
+  description: >-
+    書類の添付情報を更新します。
+  operationId: updateDocAttachement
+  requestBody:
+    $ref: ../components/requestBodies/UpdateDocAttachmentRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/DocAttachmentResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

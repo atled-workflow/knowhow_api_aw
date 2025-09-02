@@ -1,0 +1,51 @@
+type: object
+pattern: org.FindSectionRoleGroupRequestModel
+properties:
+  condition:
+    description: セクションロールグループ検索条件
+    type: object
+    pattern: org.SectionRoleConditionModel
+    properties:
+      code:
+        description: セクションロールグループコード
+        type: string
+      name:
+        description: セクションロールグループ名称
+        type: string
+      roleCode:
+        description: セクションロールコード
+        type: string
+      columnValueConditionList:
+        description: 任意検索条件一覧
+        type: object
+        pattern: org.SectionRoleGroupColumnValueConditionListModel
+        properties:
+          entries:
+            description: 任意検索条件
+            type: array
+            items:
+              type: object
+              pattern: org.SectionRoleGroupColumnValueConditionModel
+              properties:
+                column:
+                  description: |
+                    フィールド値タイプ<br>
+                    指定可能な値<br>
+                    |パラメータ|説明|
+                    |----|----|
+                    |Code|コード|
+                    |Name|名称|
+                    |SectionRoleCode|セクションロールコード|
+                  type: string
+                  pattern: org.EnumSectionRoleGroupFieldType
+                compareOperatorType:
+                  allOf:
+                    - $ref: ./compareOperatorType.yaml
+                value:
+                  description: 値
+                  type: string
+          logicalOperator:
+            description: |
+              任意検索全体のAND / OR<br>
+              *AND または OR を指定
+            type: string

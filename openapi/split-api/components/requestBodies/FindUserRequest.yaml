@@ -1,0 +1,31 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUserRequest.yaml
+    example:
+      condition:
+        code: user01
+        loginId: null
+        name: null
+        isAccountLock: false
+        unitCode: null
+        sectionRoleCode: null
+        universalRoleCode: null
+        reserveItem1: null
+        reserveItem2: null
+        reserveItem3: null
+        reserveItem4: null
+        reserveItem5: null
+        reserveItem6: null
+        reserveItem7: null
+        reserveItem8: null
+        reserveItem9: null
+        reserveItem10: null
+        columnValueConditionList:
+          entries:
+            - column: ReserveItem1
+              compareOperatorType: NOT_LIKE
+              value: A
+          logicalOperator: AND
+        criterionDate: 2024-10-31 00:00:00 JST

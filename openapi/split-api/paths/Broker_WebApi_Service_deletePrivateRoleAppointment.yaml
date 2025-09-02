@@ -1,0 +1,22 @@
+post:
+  tags:
+    - OrgAPI
+  summary: プライベートロール所属削除
+  description: >-
+    プライベートロール所属を削除します。
+  operationId: deletePrivateRoleAppointment
+  requestBody:
+    $ref: ../components/requestBodies/DeletePrivateRoleAppointmentRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/ResultStatusResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

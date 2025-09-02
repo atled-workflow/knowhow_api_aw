@@ -1,0 +1,22 @@
+post:
+  tags:
+    - OrgAPI
+  summary: 引上げ権限適用終了
+  description: >-
+    引上げ権限を適用終了します。
+  operationId: disableDeprivationAppointment
+  requestBody:
+    $ref: ../components/requestBodies/DisableDeprivationAppointmentRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/DisableDeprivationAppointmentResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

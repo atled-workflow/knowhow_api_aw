@@ -1,0 +1,16 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUniversalRoleAppointmentRequest.yaml
+    example:
+      condition:
+        userCode: user01
+        roleCode: urole01
+        columnValueConditionList:
+          entries:
+            - column: UserName
+              ompareOperator: LIKE
+              value: u
+          logicalOperator: AND
+        criterionDate: 2024-10-31 00:00:00 JST

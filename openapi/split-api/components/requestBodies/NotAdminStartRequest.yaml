@@ -1,0 +1,23 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - formCode
+        - ruleCode
+      type: object
+      pattern: workflow.notadmin.NotAdminStartRequestModel
+      properties:
+        comment:
+          description: コメント
+          type: string
+      allOf:
+        - $ref: ../schemas/NotAdminDraftRequest.yaml
+    example:
+      docId: 999
+      criterionDate: 2024-10-31 00:00:00 JST
+      applyUnitCode: unit01
+      applyUserCode: user01
+      formCode: form01
+      ruleCode: rule01
+      comment: 申請

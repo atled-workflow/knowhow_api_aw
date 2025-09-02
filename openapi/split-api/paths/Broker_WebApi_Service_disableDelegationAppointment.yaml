@@ -1,0 +1,22 @@
+post:
+  tags:
+    - OrgAPI
+  summary: 権限委譲適用終了
+  description: >-
+    権限委譲を適用終了します。
+  operationId: disableDelegationAppointment
+  requestBody:
+    $ref: ../components/requestBodies/DisableDelegationAppointmentRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/DisableDelegationAppointmentResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

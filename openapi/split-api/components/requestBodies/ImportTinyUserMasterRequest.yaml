@@ -1,0 +1,34 @@
+content:
+  application/json:
+    schema:
+      required:
+        - schemaName
+        - table
+      type: object
+      pattern: usermaster.importUserMasterRequestModel
+      properties:
+        schemaName:
+          description: |
+            スキーマ名<br>
+            *外部マスタのスキーマ名(初期値：agileworks_user)
+          type: string
+          example: agileworks_user
+        strategy:
+          description: |
+            取込形式<br>
+            FULLSET：全件取込<br>
+            SUBSET：差分取込<br>
+            *未指定の場合はFULLSETに設定
+          type: string
+          pattern: MasterImportStrategy
+          example: FULLSET
+        table:
+          description: テーブル名
+          type: string
+          example: sample$aw
+        data:
+          description: |
+            CSVデータ<br>
+            *文字コードはUTF-8固定
+          type: string
+          example: title1,title2,title3

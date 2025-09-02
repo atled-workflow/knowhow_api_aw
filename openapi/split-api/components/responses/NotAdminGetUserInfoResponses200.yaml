@@ -1,0 +1,44 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/NotAdminGetUserInfoResponse.yaml
+    examples:
+      正常:
+        value:
+          userInfo:
+            user:
+              code: user001
+              name: 寺崎啓一
+              loginId: user001
+              displayLanguage: ja
+            unit:
+              entries:
+                - code: unit001
+                  name: 組織1
+                  isMainUnit: false
+                  sectionRoleCode: srole01
+                  sectionRoleName: セクションロール1
+                - code: unit002
+                  name: 組織2
+                  isMainUnit: false
+                  sectionRoleCode: srole02
+                  sectionRoleName: セクションロール2
+            role:
+              entries:
+                - type: universalRole
+                  code: urole01
+                  name: ユニバーサルロール
+                - type: privateRole
+                  code: prole01
+                  name: プライベートロール
+          systemName: AgileWorks
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

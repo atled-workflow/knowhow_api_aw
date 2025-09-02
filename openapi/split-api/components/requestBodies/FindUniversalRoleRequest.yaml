@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUniversalRoleRequest.yaml
+    example:
+      condition:
+        code: urole01
+        name: ユニバーサルロール
+        columnValueConditionList:
+          entries:
+            - column: Name
+              ompareOperator: LIKE
+              value: ユニバーサル
+          logicalOperator: AND

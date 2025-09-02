@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: org.UniversalRoleAppointmentModel
+      properties:
+        id:
+          description: |
+            削除対象ユニバーサルロール所属のID<br>
+            *「ユニバーサルロール所属作成API」または「ユニバーサルロール所属参照API」で取得した値を指定
+          type: integer
+          example: 999

@@ -1,0 +1,12 @@
+description: Error response(Service unavailable)
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        error_code:
+          type: integer
+          example: 503
+        error_message:
+          type: string
+          example: '{エラーメッセージ}'

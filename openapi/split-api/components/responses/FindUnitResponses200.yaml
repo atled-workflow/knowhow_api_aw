@@ -1,0 +1,67 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUnitResponse.yaml
+    examples:
+      正常:
+        value:
+          unitList:
+            entries:
+              - name: 組織2
+                id: 999
+                localeName: auto
+                localizedName: 組織2
+                officialName: 組織2正式名称
+                kana: ソシキ2セイシキメイショウ
+                code: unit02
+                reserveItems:
+                  reserveItem1: item1
+                  reserveItem2: item2
+                  reserveItem3: item3
+                  reserveItem4: item4
+                  reserveItem5: item5
+                  reserveItem6: item6
+                  reserveItem7: item7
+                  reserveItem8: item8
+                  reserveItem9: item9
+                  reserveItem10: item10
+                  reserveItem11: item11
+                  reserveItem12: item12
+                  reserveItem13: item13
+                  reserveItem14: item14
+                  reserveItem15: item15
+                  reserveItem16: item16
+                  reserveItem17: item17
+                  reserveItem18: item18
+                  reserveItem19: item19
+                  reserveItem20: item20
+                availableDateTo: 2060-12-31 00:00:00 JST
+                validityDateTo: 2060-12-31 00:00:00 JST
+                criterionDate: 1900-01-01 00:00:00 JST
+                remarks: 備考
+                importCode: unit02
+                parentCode: unit01
+                validityDateFrom: 1900-01-01 00:00:00 JST
+                availableDateFrom: 1900-01-01 00:00:00 JST
+            resultStatus:
+              status: SUCCESS
+              messageList:
+                entries: []
+              text: null
+              code: null
+      パラメータが不正:
+        value:
+          unitList:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

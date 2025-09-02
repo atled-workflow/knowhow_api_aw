@@ -1,0 +1,46 @@
+value:
+  publicFolderList:
+    entries:
+      - name: 総務・勤怠管理
+        id: 1
+        code: soumu
+        publicFormList:
+          entries:
+            - formCode: B01
+              formName: B01身上報告書
+              ruleCode: soumu
+              ruleName: 総務汎用ルール
+            - formCode: B02
+              formName: B02届出事項変更届
+              ruleCode: soumu
+              ruleName: 総務汎用ルール
+        publicFolderList:
+          entries:
+            - name: 勤怠
+              id: 3
+              code: kintai
+              publicFormList:
+                entries:
+                  - formCode: A083
+                    formName: A083休暇届
+                    ruleCode: soumu
+                    ruleName: 総務汎用ルール
+              publicFolderList:
+                entries: []
+      - name: 財務・経理
+        id: 2
+        code: zaimukanri
+        publicFormList:
+          entries:
+            - formCode: shutyo_seisan
+              formName: 出張仮払精算書
+              ruleCode: shutyo_seisan
+              ruleName: 出張清算フロー
+        publicFolderList:
+          entries: []
+  resultStatus:
+    status: SUCCESS
+    messageList:
+      entries: []
+    text: null
+    code: null

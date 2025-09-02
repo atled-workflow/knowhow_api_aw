@@ -1,0 +1,44 @@
+description: 拡張項目
+type: object
+pattern: org.ReserveItemsModel
+properties:
+  reserveItem1:
+    type: string
+  reserveItem2:
+    type: string
+  reserveItem3:
+    type: string
+  reserveItem4:
+    type: string
+  reserveItem5:
+    type: string
+  reserveItem6:
+    type: string
+  reserveItem7:
+    type: string
+  reserveItem8:
+    type: string
+  reserveItem9:
+    type: string
+  reserveItem10:
+    type: string
+  reserveItem11:
+    type: string
+  reserveItem12:
+    type: string
+  reserveItem13:
+    type: string
+  reserveItem14:
+    type: string
+  reserveItem15:
+    type: string
+  reserveItem16:
+    type: string
+  reserveItem17:
+    type: string
+  reserveItem18:
+    type: string
+  reserveItem19:
+    type: string
+  reserveItem20:
+    type: string

@@ -1,0 +1,15 @@
+type: object
+pattern: org.DeprivationAppointmentResponseModel
+properties:
+  deprivationAppointment:
+    description: 引上げ権限情報
+    type: object
+    properties:
+      id:
+        description: 引上げ権限のid
+        type: integer
+    allOf:
+      - $ref: ./AddDeprivationAppointmentRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

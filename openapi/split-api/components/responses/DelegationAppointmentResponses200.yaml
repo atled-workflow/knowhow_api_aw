@@ -1,0 +1,55 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/DelegationAppointmentResponse.yaml
+    examples:
+      正常:
+        value:
+          delegationAppointment:
+            id: 999
+            targetFormList:
+              entries:
+                - formCode: form01
+            targetRuleList:
+              entries:
+                - ruleCode: rule01
+            availableDateTo: 2060-12-31 00:00:00 JST
+            availableDateFrom: 1900-01-01 00:00:00 JST
+            criterionDate: 1900-01-01 00:00:00 JST
+            fromUserCode: user01
+            toUserCode: user02
+            fromUnitCode: unit01
+            taskUnitPolicy: FROM
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          delegationAppointment:
+            id: null
+            targetFormList:
+              entries: []
+            targetRuleList:
+              entries: []
+            availableDateTo: null
+            availableDateFrom: null
+            criterionDate: null
+            fromUserCode: null
+            toUserCode: null
+            fromUnitCode: null
+            taskUnitPolicy: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

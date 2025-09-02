@@ -1,0 +1,16 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - ruleStepCode
+        - comment
+        - remandRuleStepCode
+      allOf:
+        - $ref: ../schemas/RemandRequest.yaml
+    example:
+      docId: 999
+      operatorCode: user002
+      ruleStepCode: STEP3
+      comment: 差戻し
+      remandRuleStepCode: STEP2

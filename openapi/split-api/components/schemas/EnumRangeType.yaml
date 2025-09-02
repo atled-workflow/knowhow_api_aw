@@ -1,0 +1,10 @@
+description: |
+  日付範囲タイプ<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |ABSOLUTE_DATE|日付指定|
+  |RELATIVE_DAY|日付指定(日)|
+  |RELATIVE_MONTH|日付指定(月)|
+type: string
+pattern: doc.EnumRangeType

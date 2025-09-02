@@ -1,0 +1,27 @@
+description: Successful response
+content:
+  application/octet-stream:
+    examples:
+      正常:
+        value: CSVファイルの内容(バイナリデータ)
+  application/json:
+    examples:
+      パラメータが不正:
+        value:
+          userMasterCsv:
+            storageFile:
+              name: null
+              key: null
+              id: null
+              size: null
+              contentType: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

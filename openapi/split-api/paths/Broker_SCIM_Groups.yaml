@@ -1,0 +1,49 @@
+get:
+  tags:
+    - SCIMAPI/Groups
+  summary: 組織情報取得
+  description:
+    指定された条件を元にユーザー情報を取得します。
+  operationId: SCIMGetGroups
+  parameters:
+    - $ref: ../components/parameters/groupsFilter.yaml
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMGroupsCountResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+post:
+  tags:
+    - SCIMAPI/Groups
+  summary: 組織情報作成
+  description:
+    リクエストボディに指定したデータを元に組織情報を作成します。
+  operationId: SCIMPostGroups
+  requestBody:
+      $ref: "../components/requestBodies/SCIMPostGroupsRequest.yaml"
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMGroupsResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml

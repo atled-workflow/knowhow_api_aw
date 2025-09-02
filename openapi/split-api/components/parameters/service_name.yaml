@@ -1,0 +1,12 @@
+description: |
+  {名前空間}.{サービス名}<br>
+  使用したいAPIに応じて指定してください。<br>
+  ・名前空間：<br>
+    （管理者権限必須API）doc, workflow, org, site, usermaster, form, publication<br>
+    （管理者権限不要API）userfunc.doc, userfunc.workflow, userfunc.org, userfunc.publication, system<br>
+  ・サービス名：Doc, Workflow, Org, Site, UserMaster, Form, Publication
+name: name
+in: query
+schema:
+  type: string
+  example: doc.Doc

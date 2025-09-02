@@ -1,0 +1,67 @@
+type: object
+properties:
+  schemas:
+    description: |
+      スキーマ<br>
+      *"urn:ietf:params:scim:api:messages:2.0:PatchOp" 固定
+    type: string
+  Operations:
+    description: オペレーション
+    type: array
+    items:
+      type: object
+      required:
+        - op
+        - path
+      properties:
+        op:
+          description: >
+            操作タイプ<br>
+
+            更新操作は以下が指定可能です。(大文字小文字は区別しません）<br>
+
+            追加(add)<br>
+
+            置換(replace)<br>
+
+            削除(remove)*<br>
+
+            *削除(remove)の操作はリソースの必須項目（externalId、displayName、userName）に対して行うことはできません。<br>
+             必須指定の項目に削除(remove)の操作を行った場合はエラーレスポンスが返却されます。
+          type: string
+        path:
+          description: >
+            変更対象属性<br>
+
+            指定可能な値<br>
+
+            |path|AW項目|op(Add)|op(Replace)|op(Remove)|
+
+            |----|----|----|----|----|
+
+            |externalId|ユーザーコード|valueで指定した値で更新します|valueで指定した値で更新します|指定できません|
+
+            |displayName|ユーザー名称|〃|〃|〃|
+
+            |userName|ログインID|〃|〃|〃|
+
+            |password|パスワード|〃|〃|変更しない|
+
+            |active|アカウントロック|〃|〃|〃|
+
+            |emails|メールアドレス|〃|〃|null固定|
+
+            |locale|表示言語|〃|〃|既定の言語に更新します。|
+
+            |roles|ユニバーサルロール|valueで指定したユニバーサルロールを追加します|valueで指定したユニバーサルロールに置き換えます|ユーザーが所持している既存のユニバーサルロールを適用終了又は削除します*|
+
+            |groups|所属組織|valueで指定した所属組織を追加します|valueで指定した所属組織に置き換えます|ユーザーが所属している既存の所属組織を適用終了又は削除します*|
+
+            *履歴モードの状態によって動作が変わります<br>
+             無効：削除します / 有効：適用終了します
+          type: string
+        value:
+          description: |
+            新しい値<br>
+            pathで指定した属性の更新する値
+          type: string

@@ -1,0 +1,13 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SCIMGroupsResponse.yaml
+    example:
+      value:
+        schemas:
+          - urn:ietf:params:scim:schemas:core:2.0:Group
+        id: 999
+        externalId: unit001
+        displayName: unit001

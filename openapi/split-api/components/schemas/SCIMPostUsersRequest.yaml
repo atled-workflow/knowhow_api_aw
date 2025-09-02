@@ -1,0 +1,7 @@
+type: object
+properties:
+  password:
+    description: パスワード
+    type: string
+allOf:
+  - $ref: ./SCIMPostUsersIdRequest.yaml

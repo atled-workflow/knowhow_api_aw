@@ -1,0 +1,37 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      type: object
+      pattern: common.ResponseModel
+      properties:
+        resultStatus:
+          allOf:
+            - $ref: ../schemas/resultStatus.yaml
+    examples:
+      正常:
+        value:
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        value:
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries: []
+            text: 公開APIの実行時にエラーが発生しました。
+            code: APIPAP_W0003

@@ -1,0 +1,7 @@
+value:
+  resultStatus:
+    status: FAIL
+    messageList:
+      entries: []
+    text: 公開APIの実行時にエラーが発生しました。
+    code: APIPAP_W0003

@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: org.PrivateRoleModel
+      properties:
+        id:
+          description: |
+            削除対象プライベートロールのID<br>
+            *「プライベートロール作成API」または「プライベートロール参照API」で取得した値を指定
+          type: integer
+          example: 999

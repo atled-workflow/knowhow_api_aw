@@ -1,0 +1,421 @@
+openapi: 3.0.0
+info:
+  title: 'AgileWorks WebAPI (R3.1.1)'
+  version: 1.0.0
+servers:
+  - url: https://sample.atled.jp/AgileWorks
+  
+
+security:
+  - ApiKeyAuth: []
+
+tags:
+  - name: common
+  - name: DocAPI
+  - name: WorkflowAPI
+  - name: OrgAPI
+  - name: SiteAPI
+  - name: UserMasterAPI
+  - name: FormAPI
+  - name: PublicationAPI
+  - name: NotAdminAPI
+  - name: SCIMAPI/Users
+  - name: SCIMAPI/Groups
+  - name: SCIMAPI/ResourceTypes
+  - name: SCIMAPI/Schemas
+  - name: SCIMAPI/Service
+
+paths:
+  /Broker/WebApi/Model:
+    $ref: split-api/paths/Broker_WebApi_Model.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service:
+    $ref: split-api/paths/Broker_WebApi_Service.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Download:
+    $ref: split-api/paths/Broker_WebApi_Download.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=getDocHeader:
+    $ref: split-api/paths/Broker_WebApi_Service_getDocHeader.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=getDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_getDoc.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=prepareDocRequest:
+    $ref: split-api/paths/Broker_WebApi_Service_prepareDocRequest.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=addDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_addDoc.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=updateDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_updateDoc.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=hardDeleteDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_hardDeleteDoc.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=selectDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_selectDoc.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=getDocPdf:
+    $ref: split-api/paths/Broker_WebApi_Service_getDocPdf.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=listDocComment:
+    $ref: split-api/paths/Broker_WebApi_Service_listDocComment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=addDocComment:
+    $ref: split-api/paths/Broker_WebApi_Service_addDocComment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=deleteDocComment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteDocComment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=addDocAttachment:
+    $ref: split-api/paths/Broker_WebApi_Service_addDocAttachment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=updateDocAttachment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateDocAttachment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=listDocAttachment:
+    $ref: split-api/paths/Broker_WebApi_Service_listDocAttachment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=deleteDocAttachment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteDocAttachment.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=getDocReferencee:
+    $ref: split-api/paths/Broker_WebApi_Service_getDocReferencee.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=listDocReferencer:
+    $ref: split-api/paths/Broker_WebApi_Service_listDocReferencer.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=addDocReference:
+    $ref: split-api/paths/Broker_WebApi_Service_addDocReference.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=deleteDocReference:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteDocReference.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=doc.Doc&method=openDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_openDoc.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=countWorkflowMessage:
+    $ref: split-api/paths/Broker_WebApi_Service_countWorkflowMessage.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=countListWorkflowMessage:
+    $ref: split-api/paths/Broker_WebApi_Service_countListWorkflowMessage.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=selectWorkflowMessage:
+    $ref: split-api/paths/Broker_WebApi_Service_selectWorkflowMessage.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=draft:
+    $ref: split-api/paths/Broker_WebApi_Service_draft.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=start:
+    $ref: split-api/paths/Broker_WebApi_Service_start.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=approve:
+    $ref: split-api/paths/Broker_WebApi_Service_approve.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=delete:
+    $ref: split-api/paths/Broker_WebApi_Service_delete.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=remand:
+    $ref: split-api/paths/Broker_WebApi_Service_remand.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=retract:
+    $ref: split-api/paths/Broker_WebApi_Service_retract.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=reject:
+    $ref: split-api/paths/Broker_WebApi_Service_reject.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=getWorkflowInfo:
+    $ref: split-api/paths/Broker_WebApi_Service_getWorkflowInfo.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=findWorkflowTask:
+    $ref: split-api/paths/Broker_WebApi_Service_findWorkflowTask.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=listWorkflowJournal:
+    $ref: split-api/paths/Broker_WebApi_Service_listWorkflowJournal.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=listElectJournal:
+    $ref: split-api/paths/Broker_WebApi_Service_listElectJournal.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=workflow.Workflow&method=listShareJournal:
+    $ref: split-api/paths/Broker_WebApi_Service_listElectJournal.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addUser:
+    $ref: split-api/paths/Broker_WebApi_Service_addUser.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findUser:
+    $ref: split-api/paths/Broker_WebApi_Service_findUser.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateUser:
+    $ref: split-api/paths/Broker_WebApi_Service_updateUser.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteUser:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteUser.yaml
+ # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableUser:
+    $ref: split-api/paths/Broker_WebApi_Service_disableUser.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addUnit:
+    $ref: split-api/paths/Broker_WebApi_Service_addUnit.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findUnit:
+    $ref: split-api/paths/Broker_WebApi_Service_findUnit.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateUnit:
+    $ref: split-api/paths/Broker_WebApi_Service_updateUnit.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteUnit:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteUnit.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableUnit:
+    $ref: split-api/paths/Broker_WebApi_Service_disableUnit.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addSectionRole:
+    $ref: split-api/paths/Broker_WebApi_Service_addSectionRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findSectionRole:
+    $ref: split-api/paths/Broker_WebApi_Service_findSectionRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateSectionRole:
+    $ref: split-api/paths/Broker_WebApi_Service_updateSectionRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteSectionRole:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteSectionRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addSectionRoleGroup:
+    $ref: split-api/paths/Broker_WebApi_Service_addSectionRoleGroup.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findSectionRoleGroup:
+    $ref: split-api/paths/Broker_WebApi_Service_findSectionRoleGroup.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateSectionRoleGroup:
+    $ref: split-api/paths/Broker_WebApi_Service_updateSectionRoleGroup.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteSectionRoleGroup:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteSectionRoleGroup.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addUnitAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addUnitAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findUnitAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findUnitAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateUnitAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateUnitAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteUnitAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteUnitAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableUnitAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disableUnitAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addProxyApplyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addProxyApplyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findProxyApplyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findProxyApplyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateProxyApplyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateProxyApplyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteProxyApplyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteProxyApplyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableProxyApplyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disableProxyApplyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addProxyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addProxyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findProxyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findProxyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateProxyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateProxyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteProxyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteProxyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableProxyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disableProxyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addDelegationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addDelegationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findDelegationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findDelegationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateDelegationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateDelegationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteDelegationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteDelegationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableDelegationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disableDelegationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addDeprivationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addDeprivationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findDeprivationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findDeprivationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateDeprivationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateDeprivationAppointment.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteDeprivationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteDeprivationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableDeprivationAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disableDeprivationAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addPrivateRole:
+    $ref: split-api/paths/Broker_WebApi_Service_addPrivateRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findPrivateRole:
+    $ref: split-api/paths/Broker_WebApi_Service_findPrivateRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updatePrivateRole:
+    $ref: split-api/paths/Broker_WebApi_Service_updatePrivateRole.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deletePrivateRole:
+    $ref: split-api/paths/Broker_WebApi_Service_deletePrivateRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addPrivateRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addPrivateRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findPrivateRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findPrivateRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updatePrivateRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updatePrivateRoleAppointment.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deletePrivateRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deletePrivateRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disablePrivateRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disablePrivateRoleAppointment.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addUniversalRole:
+    $ref: split-api/paths/Broker_WebApi_Service_addUniversalRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findUniversalRole:
+    $ref: split-api/paths/Broker_WebApi_Service_findUniversalRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateUniversalRole:
+    $ref: split-api/paths/Broker_WebApi_Service_updateUniversalRole.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteUniversalRole:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteUniversalRole.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=addUniversalRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_addUniversalRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=findUniversalRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_findUniversalRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=updateUniversalRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_updateUniversalRoleAppointment.yaml
+ # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=deleteUniversalRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_deleteUniversalRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=org.Org&method=disableUniversalRoleAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_disableUniversalRoleAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=site.Site&method=findProject:
+    $ref: split-api/paths/Broker_WebApi_Service_findProject.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=usermaster.UserMaster&method=importTinyUserMaster:
+    $ref: split-api/paths/Broker_WebApi_Service_importTinyUserMaster.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=usermaster.UserMaster&method=exportTinyUserMaster:
+    $ref: split-api/paths/Broker_WebApi_Service_exportTinyUserMaster.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=usermaster.UserMaster&method=importUserMaster:
+    $ref: split-api/paths/Broker_WebApi_Service_importUserMaster.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=usermaster.UserMaster&method=exportUserMaster:
+    $ref: split-api/paths/Broker_WebApi_Service_exportUserMaster.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=form.Form&method=listComponentMasterWindow:
+    $ref: split-api/paths/Broker_WebApi_Service_listComponentMasterWindow.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=form.Form&method=listComponentAutoNumber:
+    $ref: split-api/paths/Broker_WebApi_Service_listComponentAutoNumber.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=form.Form&method=listForm:
+    $ref: split-api/paths/Broker_WebApi_Service_listForm.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=form.Form&method=findFormDefinition:
+    $ref: split-api/paths/Broker_WebApi_Service_findFormDefinition.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=publication.Publication&method=listPublicFolderInfo:
+    $ref: split-api/paths/Broker_WebApi_Service_listPublicFolderInfo.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.doc.Doc&method=prepareDocRequest:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminPrepareDocRequest.yaml
+  # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.doc.Doc&method=addDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminAddDoc.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.doc.Doc&method=selectDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminSelectDoc.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.doc.Doc&method=openDoc:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminOpenDoc.yaml
+  # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.workflow.Workflow&method=countListWorkflowMessage:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminCountListWorkflowMessage.yaml
+  # --------------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.workflow.Workflow&method=selectWorkflowMessage:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminSelectWorkflowMessage.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.workflow.Workflow&method=start:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminStart.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.org.Org&method=listProxyApplyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminListProxyApplyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.org.Org&method=listProxyAppointment:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminListProxyAppointment.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.publication.Publication&method=listPublicFolderInfo:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminListPublicFolderInfo.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.system.System&method=getUserInfo:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminGetUserInfo.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/WebApi/Service?name=userfunc.system.System&method=getVersion:
+    $ref: split-api/paths/Broker_WebApi_Service_notAdminGetVersion.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/Users:
+    $ref: split-api/paths/Broker_SCIM_Users.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/Users/{USER_ID}:
+    $ref: split-api/paths/Broker_SCIM_Users_USERID.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/Groups:
+    $ref: split-api/paths/Broker_SCIM_Groups.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/Groups/{ORG_ID}:
+    $ref: split-api/paths/Broker_SCIM_Groups_GROUPID.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/ResourceTypes:
+    $ref: split-api/paths/Broker_SCIM_ResourceTypes.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/Schemas:
+    $ref: split-api/paths/Broker_SCIM_Schemas.yaml
+  # --------------------------------------------------------------------------------------------------
+  /Broker/SCIM/ServiceProviderConfigs:
+    $ref: split-api/paths/Broker_SCIM_ServiceProviderConfigs.yaml
+# -----------------------------------------------
+# コンポーネントの定義
+# -----------------------------------------------
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key

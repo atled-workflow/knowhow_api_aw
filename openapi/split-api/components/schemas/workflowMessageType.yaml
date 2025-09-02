@@ -1,0 +1,14 @@
+description: |
+  回付情報タイプ<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |APPLY_REQUEST|申請依頼|
+  |APPROVE_REQUEST|承認依頼|
+  |CONFIRM_REQUEST|報告依頼|
+  |PREPARE|下書き|
+  |REMANDED|差戻し|
+  |REMIND_EXIST|督促あり|
+  |REQUEST_POSSIBLE|回付予定|
+type: string
+pattern: workflow.EnumWorkflowMessageType

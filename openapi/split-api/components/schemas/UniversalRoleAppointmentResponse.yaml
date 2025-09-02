@@ -1,0 +1,15 @@
+type: object
+pattern: org.UniversalRoleAppointmentResponseModel
+properties:
+  universalRoleAppointment:
+    description: ユニバーサルロール所属情報
+    type: object
+    properties:
+      id:
+        description: ユニバーサルロール所属のid
+        type: integer
+    allOf:
+      - $ref: ./AddUniversalRoleAppointmentRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

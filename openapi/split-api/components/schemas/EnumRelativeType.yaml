@@ -1,0 +1,15 @@
+description: |
+  関連タイプ<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |OWNER|書類オーナ|
+  |CREATE|作成|
+  |APPLY|申請|
+  |APPROVE|承認|
+  |PROXY_APPROVE|代理承認|
+  |PRINCIPAL_APPROVE|被代理承認|
+  |REJECT|却下|
+  |CANCEL|取下げ|
+type: string
+pattern: EnumRelativeType

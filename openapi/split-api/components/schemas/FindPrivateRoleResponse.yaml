@@ -1,0 +1,22 @@
+type: object
+pattern: org.FindPrivateRoleResponseModel
+properties:
+  privateRoleList:
+    description: プライベートロール一覧
+    type: object
+    pattern: org.PrivateRoleListModel
+    properties:
+      entries:
+        description: プライベートロール情報
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              description: プライベートロールのid
+              type: integer
+          allOf:
+            - $ref: ./AddPrivateRoleRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

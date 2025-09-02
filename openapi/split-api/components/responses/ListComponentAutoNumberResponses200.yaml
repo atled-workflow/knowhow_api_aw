@@ -1,0 +1,27 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/ListComponentAutoNumberResponse.yaml
+    examples:
+      正常:
+        value:
+          autoNumber:
+            entries:
+              - name: 製品管理
+                id: 100001
+                code: seihin
+                componentList:
+                  entries:
+                    - name: 傷害調査
+                      id: 1
+                      code: investment
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: org.SectionRoleGroupModel
+      properties:
+        id:
+          description: |
+            削除対象セクションロールグループのID<br>
+            *「セクションロールグループ作成API」または「セクションロールグループ参照API」で取得した値を指定
+          type: integer
+          example: 999

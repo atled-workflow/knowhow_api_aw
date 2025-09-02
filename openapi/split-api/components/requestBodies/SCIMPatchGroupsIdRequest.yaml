@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SCIMPatchGroupsIdRequest.yaml
+    example:
+      schemas:
+        - urn:ietf:params:scim:api:messages:2.0:PatchOp
+      Operations:
+        - op: Replace
+          path: externalId
+          value: unit001
+        - op: Replace
+          path: displayName
+          value: unit001

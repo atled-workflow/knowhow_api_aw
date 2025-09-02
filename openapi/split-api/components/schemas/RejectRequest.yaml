@@ -1,0 +1,17 @@
+type: object
+pattern: workflow.RejectRequestModel
+properties:
+  docId:
+    description: 書類ID
+    type: integer
+  operatorCode:
+    description: |
+      却下する処理者のユーザーコード<br>
+      *未指定の場合は、却下ステップに設定されている任意の処理者で却下される（どの処理者で却下されるかは不定）
+    type: string
+  ruleStepCode:
+    description: 却下ステップのコード
+    type: string
+  comment:
+    description: コメント
+    type: string

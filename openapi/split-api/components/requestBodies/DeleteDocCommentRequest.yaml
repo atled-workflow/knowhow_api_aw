@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: doc.DocCommentModel
+      properties:
+        id:
+          description: |
+            コメントID<br>
+            *「書類メモ追加API」または「書類コメント/メモ一覧取得API」で取得したコメントのIDを指定
+          type: integer
+          example: 9999

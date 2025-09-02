@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindPrivateRoleRequest.yaml
+    example:
+      condition:
+        code: prole01
+        name: プライベートロール
+        columnValueConditionList:
+          entries:
+            - column: Name
+              compareOperator: LIKE
+              value: プライベート
+          logicalOperator: AND

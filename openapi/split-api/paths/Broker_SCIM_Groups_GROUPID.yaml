@@ -1,0 +1,109 @@
+get:
+  tags:
+    - SCIMAPI/Groups
+  summary: 指定組織情報取得
+  description:
+    パスに指定した組織IDに紐づく組織の情報を取得します。
+  operationId: SCIMGetGroupsId
+  parameters:
+    - $ref: ../components/parameters/ORG_ID.yaml
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMGroupsResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+put:
+  tags:
+    - SCIMAPI/Groups
+  summary: 組織情報更新
+  description:
+    パスに指定した組織IDに紐づく組織の情報を更新します。
+  operationId: SCIMPutGroupsId
+  parameters:
+    - $ref: ../components/parameters/ORG_ID.yaml
+  requestBody:
+      $ref: "../components/requestBodies/SCIMPostGroupsRequest.yaml"
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMGroupsResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+patch:
+  tags:
+    - SCIMAPI/Groups
+  summary: 組織情報一部更新
+  description:
+    パスに指定した組織IDに紐づく組織情報の指定項目のみを更新します。
+  operationId: SCIMPatchGroupsId
+  parameters:
+    - $ref: ../components/parameters/ORG_ID.yaml
+  requestBody:
+      $ref: "../components/requestBodies/SCIMPatchGroupsIdRequest.yaml"
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMGroupsResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+delete:
+  tags:
+    - SCIMAPI/Groups
+  summary: 組織情報削除
+  description:
+    パスに指定した組織IDに紐づく組織情報を削除します。<br>
+    *削除方法について<br>
+    組織情報削除APIは、履歴モードの状態で削除動作が異なります。<br>
+    履歴モード無効の場合：削除します<br>
+    履歴モード有効の場合：適用終了します
+  operationId: SCIMDeleteGroupsId
+  parameters:
+    - $ref: ../components/parameters/ORG_ID.yaml
+  responses:
+    "204":
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml

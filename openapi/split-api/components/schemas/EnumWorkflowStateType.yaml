@@ -1,0 +1,13 @@
+description: |
+  書類状態<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |PREPARE|下書き|
+  |ACTIVE|回付中|
+  |APPROVED|承認完了|
+  |REJECTED|却下|
+  |CANCELED|取り下げ|
+  |DELETED|削除|
+type: string
+pattern: workflow.EnumWorkflowStateType

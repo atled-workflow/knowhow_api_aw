@@ -1,0 +1,24 @@
+content:
+  application/json:
+    schema:
+      required:
+        - externalId
+        - userName
+        - displayName
+      allOf:
+        - $ref: ../schemas/SCIMPostUsersIdRequest.yaml
+    example:
+      externalId: user001
+      userName: user001
+      displayName: user001
+      active: true
+      locale: ja
+      emails:
+        - value: user001@atled.jp
+          primary: true
+      roles:
+        - value: 9999
+          display: UR_001
+      groups:
+        - value: 8888
+          display: org001

@@ -1,0 +1,17 @@
+type: object
+pattern: org.UnitAppointmentResponseModel
+properties:
+  unitAppointment:
+    description: 組織所属情報
+    type: object
+    properties:
+      id:
+        description: 組織所属のid
+        type: integer
+      sortNo:
+        description: 組織所属の並び順序
+    allOf:
+      - $ref: ./AddUnitAppointmentRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

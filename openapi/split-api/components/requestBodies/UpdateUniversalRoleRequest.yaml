@@ -1,0 +1,24 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+        - code
+        - name
+        - folderCode
+      type: object
+      properties:
+        id:
+          description: |
+            更新対象ユニバーサルロールのID<br>
+            *「ユニバーサルロール作成API」または「ユニバーサルロール参照API」で取得した値を指定
+          type: integer
+      allOf:
+        - $ref: ../schemas/AddUniversalRoleRequest.yaml
+    example:
+      id: 999
+      code: urole01
+      importCode: urole01
+      name: ユニバーサルロール
+      explanation: ユニバーサルロール
+      folderCode: null

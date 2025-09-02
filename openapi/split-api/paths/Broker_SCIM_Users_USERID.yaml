@@ -1,0 +1,110 @@
+get:
+  tags:
+    - SCIMAPI/Users
+  summary: 指定ユーザー情報取得
+  description:
+    パスに指定したユーザーIDに紐づくユーザーの情報を取得します。
+  operationId: SCIMGetUsersId
+  parameters:
+    - $ref: ../components/parameters/USER_ID.yaml
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMUsersResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+put:
+  tags:
+    - SCIMAPI/Users
+  summary: ユーザー情報更新
+  description:
+    パスに指定したユーザーIDに紐づくユーザーの情報を更新します。<br>
+    *リクエストボディで指定しなかった項目は、更新されません。
+  operationId: SCIMPutUsersId
+  parameters:
+    - $ref: ../components/parameters/USER_ID.yaml
+  requestBody:
+      $ref: "../components/requestBodies/SCIMPostUsersIdRequest.yaml"
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMUsersResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+patch:
+  tags:
+    - SCIMAPI/Users
+  summary: ユーザー情報一部更新
+  description:
+    パスに指定したユーザーIDに紐づくユーザー情報の指定項目のみを更新します。
+  operationId: SCIMPatchUsersId
+  parameters:
+    - $ref: ../components/parameters/USER_ID.yaml
+  requestBody:
+      $ref: "../components/requestBodies/SCIMPatchUsersIdRequest.yaml"
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMUsersResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml
+
+delete:
+  tags:
+    - SCIMAPI/Users
+  summary: ユーザー情報削除
+  description:
+    パスに指定したユーザーIDに紐づくユーザー情報を削除します。<br>
+    *削除方法について<br>
+    ユーザー情報削除APIは、履歴モードの状態で削除動作が異なります。<br>
+    履歴モード無効の場合：削除します<br>
+    履歴モード有効の場合：適用終了します
+  operationId: SCIMDeleteUsersId
+  parameters:
+    - $ref: ../components/parameters/USER_ID.yaml
+  responses:
+    "204":
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml

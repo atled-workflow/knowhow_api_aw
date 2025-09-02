@@ -1,0 +1,12 @@
+description: |
+  日付タイプ<br>
+  指定可能な値<br>
+  |パラメータ|説明|
+  |----|----|
+  |APPLY|申請日|
+  |CRITERION|基準日|
+  |APPROVED|承認完了日|
+  |REGISTRATION|作成日|
+  |MODIFY|最終適用終了日|
+type: string
+pattern: doc.EnumDateConditionType

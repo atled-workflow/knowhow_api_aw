@@ -1,0 +1,22 @@
+type: object
+pattern: org.FindSectionRoleGroupResponseModel
+properties:
+  sectionRoleGroupList:
+    description: セクションロールグループ情報一覧
+    type: object
+    pattern: org.SectionRoleGroupListModel
+    properties:
+      entries:
+        description: セクションロールグループ情報
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              description: セクションロールグループのid
+              type: integer
+          allOf:
+            - $ref: ./AddSectionRoleGroupRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

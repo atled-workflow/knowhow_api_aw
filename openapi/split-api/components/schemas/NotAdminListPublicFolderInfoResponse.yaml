@@ -1,0 +1,53 @@
+type: object
+pattern: publication.notadmin.NotAdminListPublicFolderInfoResponseModel
+properties:
+  publicFolderList:
+    description: 公開フォルダのリスト
+    type: object
+    pattern: publication.notadmin.NotAdminPublicFolderInfoListModel
+    properties:
+      entries:
+        type: array
+        items:
+          type: object
+          pattern: publication.notadmin.NotAdmonPublicFolderInfoModel
+          properties:
+            name:
+              description: 公開フォルダ名称
+              type: string
+            id:
+              description: 公開フォルダID
+              type: integer
+            code:
+              description: 公開フォルダコード
+              type: string
+            publicFormList:
+              description: 公開フォームのリスト
+              type: object
+              pattern: publication.notadmin.NotAdminPublicFormListModel
+              properties:
+                entries:
+                  type: array
+                  items:
+                    type: object
+                    pattern: publication.notadmin.NotAdminPublicFormLModel
+                    properties:
+                      formCode:
+                        description: フォームコード
+                        type: string
+                      formName:
+                        description: フォーム名称
+                        type: string
+                      ruleCode:
+                        description: 回付ルールコード
+                        type: string
+                      ruleName:
+                        description: 回付ルール名称
+                        type: string
+            publicFolderList:
+              description: 公開フォルダのリスト
+              type: object
+              pattern: publication.notadmin.NotAdminPublicFolderInfoListModel
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

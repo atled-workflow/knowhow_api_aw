@@ -1,0 +1,22 @@
+get:
+  tags:
+    - SCIMAPI/Schemas
+  summary: スキーマ定義取得
+  description:
+    SCIM サーバーがサポートするスキーマ（データモデル）を定義し、それに関連する属性やメタデータを提供するためのエンドポイントです。
+  operationId: SCIMSchemas
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMSchemasResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml

@@ -1,0 +1,21 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUnitRequest.yaml
+    example:
+      condition:
+        code: unit02
+        name: null
+        parentCode: null
+        importCode: null
+        columnValueConditionList:
+          entries:
+            - column: NAME
+              compareOperatorType: LIKE
+              value: 組織
+            - column: AvailableDateFrom
+              compareOperatorType: LESS_EQUAL
+              value: 2020-01-01 00:00:00 JST
+          logicalOperator: AND
+        criterionDate: 2024-10-31 00:00:00 JST

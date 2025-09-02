@@ -1,0 +1,53 @@
+type: object
+pattern: publication.ListPublicFolderInfoResponseModel
+properties:
+  publicFolderList:
+    description: 公開フォルダのリスト
+    type: object
+    pattern: publication.PublicFolderInfoListModel
+    properties:
+      entries:
+        type: array
+        items:
+          type: object
+          pattern: publication.PublicFolderInfoModel
+          properties:
+            name:
+              description: 公開フォルダ名称
+              type: string
+            id:
+              description: 公開フォルダID
+              type: integer
+            code:
+              description: 公開フォルダコード
+              type: string
+            publicFormList:
+              description: 公開フォームのリスト
+              type: object
+              pattern: publication.PublicFormListModel
+              properties:
+                entries:
+                  type: array
+                  items:
+                    type: object
+                    pattern: publication.PublicFormLModel
+                    properties:
+                      formCode:
+                        description: フォームコード
+                        type: string
+                      formName:
+                        description: フォーム名称
+                        type: string
+                      ruleCode:
+                        description: 回付ルールコード
+                        type: string
+                      ruleName:
+                        description: 回付ルール名称
+                        type: string
+            publicFolderList:
+              description: 公開フォルダのリスト
+              type: object
+              pattern: publication.PublicFolderInfoListModel
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

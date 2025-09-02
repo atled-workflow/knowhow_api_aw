@@ -1,0 +1,16 @@
+description: リクエストしたリソースが見つかりません。
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        schemas:
+          type: string
+          example:
+            - urn:ietf:params:scim:api:messages:2.0:Error
+        status:
+          type: integer
+          example: 404
+        detail:
+          type: string
+          example: '{エラーメッセージ}'

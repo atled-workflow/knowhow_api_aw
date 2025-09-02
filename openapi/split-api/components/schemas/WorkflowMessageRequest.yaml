@@ -1,0 +1,12 @@
+type: object
+pattern: workflow.WorkflowMessageConditionModel
+required:
+  - userCode
+  - workflowMessageType
+properties:
+  userCode:
+    description: ユーザーコード
+    type: string
+  workflowMessageType:
+    allOf:
+      - $ref: ./workflowMessageType.yaml

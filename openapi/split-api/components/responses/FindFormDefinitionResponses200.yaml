@@ -1,0 +1,70 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindFormDefinitionResponse.yaml
+    examples:
+      正常:
+        value:
+          form:
+            code: test
+            name: test
+            rule:
+              entries:
+                - code: rule01
+                  name: ルール
+                  ruleField:
+                    entries:
+                      - ruleStepName: 申請
+                        ruleStepCode: snisei
+                        stepField:
+                          entries:
+                            - fieldName: 文字フィールド１
+                              id: textfield1
+                              disable: true
+                              invisible: false
+                              necessary: true
+            pages:
+              entries:
+                - fields: null
+                  entries:
+                    - name: 文字フィールド
+                      fieldNo: 1
+                      fieldId: apply_date
+                      fieldTypeNo: 9
+                      fieldType: TEXTFIELD
+                      dataType: STRING
+                      length: 4000
+                      tagName: 申請日
+                      groupIdName: ''
+                      maxRows: 0
+                      isRequired: false
+                      isEditable: false
+                      isDisabled: false
+                      isComma: false
+                      defaultValue: ''
+                      lookupvalue: null
+                      dateformat: null
+                      fieldList:
+                        entries: []
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          form:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

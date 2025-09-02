@@ -1,0 +1,31 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SelectDocRequest.yaml
+    example:
+      docView:
+        formCode: form01
+        columnList:
+          entries:
+            - type: DOC_ID
+            - type: FIELD
+              fieldId: textfield1
+      condition:
+        fieldValueConditionList:
+          entries:
+            - type: FIELD
+              fieldId: textfield
+              compareOperatorType: LIKE
+              value: t
+        relativeConditionList:
+          entries:
+            - type: CREATE
+              userType: USER
+              userCode: user01
+        logicalOperatirType: AND
+        workflowState: ACTIVE
+        dateCondition:
+          from: 2024-10-31 00:00:00 JST
+          type: APPLY
+        formCode: form01

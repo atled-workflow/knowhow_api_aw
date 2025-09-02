@@ -1,0 +1,17 @@
+type: object
+pattern: doc.ListDocReferencerResponseModel
+properties:
+  docHeaderList:
+    description: 書類情報のリスト
+    type: object
+    pattern: doc.DocHeaderListModel
+    properties:
+      entries:
+        description: 書類情報
+        type: array
+        items:
+          allOf:
+            - $ref: ./GetDoc.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

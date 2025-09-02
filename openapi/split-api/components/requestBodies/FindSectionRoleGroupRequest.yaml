@@ -1,0 +1,16 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindSectionRoleGroupRequest.yaml
+    example:
+      condition:
+        code: srole01
+        name: null
+        roleCode: null
+        columnValueConditionList:
+          entries:
+            - column: SectionRoleCode
+              compareOperatorType: EQUAL
+              value: srole01
+          logicalOperator: AND

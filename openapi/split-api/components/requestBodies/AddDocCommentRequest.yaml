@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - comment
+        - operationInfo
+      allOf:
+        - $ref: ../schemas/AddDocCommentRequest.yaml
+    example:
+      docId: 999
+      comment: comment
+      operationInfo:
+        registrant:
+          userCode: user01

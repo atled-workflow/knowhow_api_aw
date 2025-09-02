@@ -1,0 +1,82 @@
+type: object
+properties:
+  schemas:
+    description: |
+      応答時のスキーマタイプ<br>
+      *"urn:ietf:params:scim:api:messages:2.0:ListResponse" 固定
+    type: string
+  totalResults:
+    description: |
+      検索結果件数<br>
+      *リソースの件数
+    type: integer
+  Resources:
+    description: リソース情報
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          description: |
+            ID<br>
+            Userスキーマの場合："urn:ietf:params:scim:schemas:core:2.0:User"固定<br>
+            Groupスキーマの場合："urn:ietf:params:scim:schemas:core:2.0:Group"固定
+          type: integer
+        name:
+          description: |
+            名称<br>
+            Userスキーマの場合："User"固定<br>
+            Groupスキーマの場合："Group"固定
+          type: string
+        description:
+          description: |
+            説明<br>
+            Userスキーマの場合："User"固定<br>
+            Groupスキーマの場合："Group"固定
+          type: string
+        attributes:
+          description: 属性
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                description: 属性名称
+                type: string
+              description:
+                description: 説明
+                type: string
+              multiValued:
+                description: 属性が複数の値を持つかどうかを示す属性
+                type: boolean
+              type:
+                description: |
+                  属性のタイプ（型）を示す属性<br>
+                  boolean, decimal, integer, dateTime, reference, complex
+                type: string
+              required:
+                description: 属性が必須かどうかを指定するブール値
+                type: boolean
+              mutability:
+                description: |
+                  属性に関する変更可能性<br>
+                  mutable（変更可能）<br>
+                  immutable（変更不可能）<br>
+                  read-only（読み取り専用）<br>
+                type: string
+              caseExact:
+                description: 属性が大文字と小文字を区別するかどうかを指定するブール値
+                type: boolean
+              returned:
+                description: |
+                  属性が検索結果に含まれるかどうかを示す属性<br>
+                  always（常に返される）<br>
+                  default（デフォルトで返される）<br>
+                  never（決して返されない）
+                type: string
+              uniqueness:
+                description: |
+                  属性における一意性（uniqueness）の制約を定義するための属性<br>
+                  server（サーバー管理の一意性）<br>
+                  global（グローバル一意性）<br>
+                  uniqueness（一意性の制約なし）    

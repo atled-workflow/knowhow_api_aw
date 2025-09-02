@@ -1,0 +1,17 @@
+content:
+  application/json:
+    schema:
+      description: |
+        いずれかを必ず指定する。<br>
+        両方指定された場合、書類IDを優先する。
+      type: object
+      pattern: doc.notadmin.NotAdminDocHeaderModel
+      properties:
+        id:
+          description: 書類ID
+          type: integer
+          example: 999
+        adminNo:
+          description: 書類管理番号
+          type: string
+          example: 100

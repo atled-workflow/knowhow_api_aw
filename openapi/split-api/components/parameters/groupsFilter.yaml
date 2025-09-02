@@ -1,0 +1,9 @@
+description: |
+  フィルター<br>
+  組織コード(externalId)、組織名称(displayName)を絞り込むときに指定します。<br>
+  *使用できる演算子はeqのみになります。<br>
+name: filter
+in: query
+schema:
+  type: string
+  example: externalId eq "unit001"

@@ -1,0 +1,23 @@
+post:
+  tags:
+    - NotAdminAPI
+  summary: (管理者権限不要) 新規書類データ作成
+  description: >-
+    初期状態の書類データを作成する API です。<br>
+    取得したレスポンスは「新規書類データ保存 API」で使用できます。
+  operationId: notAdminPrepareDocRequest
+  requestBody:
+    $ref: ../components/requestBodies/NotAdminPrepareDocRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/NotAdminPrepareDocResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

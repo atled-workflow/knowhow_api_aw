@@ -1,0 +1,16 @@
+type: object
+properties:
+  schemas:
+    description: |
+      スキーマ<br>
+      *"urn:ietf:params:scim:schemas:core:2.0:Group" 固定
+    type: string
+  id:
+    description: 組織ID
+    type: integer
+  externalId:
+    description: 組織コード
+    type: string
+  displayName:
+    description: 組織名称
+    type: string

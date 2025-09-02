@@ -1,0 +1,60 @@
+type: object
+pattern: doc.PrepareDocResponseModel
+properties:
+  doc:
+    description: 書類情報
+    type: object
+    pattern: doc.DocModel
+    properties:
+      docData:
+        description: 書類データ
+        type: object
+        pattern: doc.DocDataModel
+        properties:
+          entryList:
+            description: 各フィールドのデータ
+            type: object
+            pattern: doc.DocDataEntryListModel
+            properties:
+              entries:
+                type: array
+                items:
+                  type: object
+                  pattern: doc.DocDataEntryModel
+                  properties:
+                    name:
+                      description: フィールド名
+                      type: string
+                    fieldType:
+                      description: フィールドタイプ
+                      type: string
+                    fieldId:
+                      description: フィールドID
+                      type: string
+                    dataType:
+                      description: データタイプ
+                      type: string
+                    dataValue:
+                      description: フィールドの値
+                      type: object
+                      pattern: doc.DocDataValueModel
+                      properties:
+                        value:
+                          description: |
+                            フィールドの値<br>
+                            *通常フィールドの場合のみ
+                          pattern: dataTypeの型
+                        entryList:
+                          description: |
+                            表明細フィールドのリスト<br>
+                            *表明細フィールドの場合のみ
+                          type: object
+                          pattern: doc.DocDataEntryListModel
+      publicFormId:
+        description: 公開フォームID
+        type: integer
+    allOf:
+      - $ref: ./GetDoc.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

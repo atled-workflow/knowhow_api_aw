@@ -1,0 +1,24 @@
+post:
+  tags:
+    - NotAdminAPI
+  summary: （管理者権限不要）新規書類データ保存
+  description: >-
+    新規に作成した書類データを保存します。<br>
+    「新規書類データ作成API」で取得したdocの値を雛形として、書類の各フィールドに値をセットし、本APIにより書類データの保存を行います。<br>
+    本APIで保存した書類データを画面から参照できるようにするには、さらに「書類作成 / 申請API」を実行する必要があります。
+  operationId: notAdminAddDoc
+  requestBody:
+    $ref: ../components/requestBodies/NotAdminAddDocRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/NotAdminDocResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

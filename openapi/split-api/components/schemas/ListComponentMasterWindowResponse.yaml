@@ -1,0 +1,66 @@
+type: object
+pattern: form.ListMasterWindowComponetResponseModel
+properties:
+  masterWindow:
+    description: マスタ参照コンポーネント
+    type: object
+    pattern: form.MasterWindowComponentProjectListModel
+    properties:
+      entries:
+        type: array
+        items:
+          type: object
+          pattern: form.MasterWindowComponentProjectModel
+          properties:
+            name:
+              description: 業務カテゴリ名
+              type: string
+            id:
+              description: 業務カテゴリID
+              type: integer
+            code:
+              description: 業務カテゴリコード
+              type: string
+            componentList:
+              description: マスタ参照コンポーネントリスト
+              type: object
+              pattern: form.MasterWindowComponentListModel
+              properties:
+                entries:
+                  type: array
+                  items:
+                    type: object
+                    pattern: form.MasterWindowComponentModel
+                    properties:
+                      name:
+                        description: コンポーネント名称
+                        type: string
+                      id:
+                        description: コンポーネントID
+                        type: integer
+                      code:
+                        description: コンポーネントコード
+                        type: string
+                      masterData:
+                        description: マスタデータ名
+                        type: string
+                      column:
+                        description: 列項目
+                        type: object
+                        pattern: form.MasterComponentColumnListModel
+                        properties:
+                          entries:
+                            type: array
+                            items:
+                              type: object
+                              pattern: form.MasterComponentColumnModel
+                              properties:
+                                name:
+                                  description: 見出し名称
+                                  type: string
+                                columnName:
+                                  description: DB項目名
+                                  type: string
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml
