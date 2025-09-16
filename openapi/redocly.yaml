@@ -1,0 +1,12 @@
+apis:
+  my-api:
+    root: openapi.yaml
+extends:
+  - recommended
+rules:
+  path-not-include-query:
+    severity: off
+
+  no-invalid-media-type-examples:
+    severity: off
+

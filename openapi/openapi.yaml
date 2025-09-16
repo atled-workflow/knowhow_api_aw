@@ -138,7 +138,7 @@ paths:
     $ref: split-api/paths/Broker_WebApi_Service_listElectJournal.yaml
  # --------------------------------------------------------------------------------------------------------
   /Broker/WebApi/Service?name=workflow.Workflow&method=listShareJournal:
-    $ref: split-api/paths/Broker_WebApi_Service_listElectJournal.yaml
+    $ref: split-api/paths/Broker_WebApi_Service_listShareJournal.yaml
  # --------------------------------------------------------------------------------------------------------
   /Broker/WebApi/Service?name=org.Org&method=addUser:
     $ref: split-api/paths/Broker_WebApi_Service_addUser.yaml
