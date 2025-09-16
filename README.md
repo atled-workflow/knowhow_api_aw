@@ -1,0 +1,19 @@
+├──split-api
+│   ├── components
+│   │   └── examples
+│   │   │    └── ...
+│   │   ├── parameters
+│   │   │    └── ...
+│   │   ├── requestBodies
+│   │   │    └── ...
+│   │   ├── responses
+│   │   │    └── ...
+│   │   └── schemas
+│   │        └── ...
+│   └── paths
+│       └── Broker_WebApi_Service_addUser.yaml
+│       └── Broker_WebApi_Service_findUser.yaml
+│       └── ...
+├── openapi.yaml
+├── bundled-openapi //上記を結合したファイル
+└── redocly.yaml //lintルール
