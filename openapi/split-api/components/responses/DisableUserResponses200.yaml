@@ -1,0 +1,113 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/UserResponse.yaml
+    examples:
+      正常:
+        value:
+          user:
+            name: 寺崎啓一
+            id: 999
+            displayLanguage: ja
+            localeName: ja
+            localizedName: ''
+            password: null
+            reserveItems:
+              reserveItem1: a
+              reserveItem2: b
+              reserveItem3: c
+              reserveItem4: d
+              reserveItem5: e
+              reserveItem6: f
+              reserveItem7: g
+              reserveItem8: h
+              reserveItem9: i
+              reserveItem10: j
+              reserveItem11: k
+              reserveItem12: l
+              reserveItem13: m
+              reserveItem14: 'n'
+              reserveItem15: o
+              reserveItem16: p
+              reserveItem17: q
+              reserveItem18: r
+              reserveItem19: s
+              reserveItem20: t
+            validityDateTo: 2024-12-31 00:00:00 JST
+            loginId: user01
+            code: user01
+            kana: テラサキケイイチ
+            availableDateTo: 2024-12-31 00:00:00 JST
+            criterionDate: 2024-10-31 00:00:00 JST
+            stampName: 寺崎(啓)
+            mailAddress: user01@example.com
+            remarks: 備考
+            importCode: user01
+            availableDateFrom: 1900-01-01 00:00:00 JST
+            validityDateFrom: 1900-01-01 00:00:00 JST
+            isNeedStampImage: null
+            isForceChangePassword: true
+            isAccountLock: false
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          user:
+            name: null
+            id: null
+            displayLanguage: null
+            localeName: null
+            localizedName: null
+            password: null
+            reserveItems:
+              reserveItem1: null
+              reserveItem2: null
+              reserveItem3: null
+              reserveItem4: null
+              reserveItem5: null
+              reserveItem6: null
+              reserveItem7: null
+              reserveItem8: null
+              reserveItem9: null
+              reserveItem10: null
+              reserveItem11: null
+              reserveItem12: null
+              reserveItem13: null
+              reserveItem14: null
+              reserveItem15: null
+              reserveItem16: null
+              reserveItem17: null
+              reserveItem18: null
+              reserveItem19: null
+              reserveItem20: null
+            validityDateTo: null
+            loginId: null
+            code: null
+            kana: null
+            availableDateTo: null
+            criterionDate: null
+            stampName: null
+            mailAddress: null
+            remarks: null
+            importCode: null
+            availableDateFrom: null
+            validityDateFrom: null
+            isNeedStampImage: null
+            isForceChangePassword: null
+            isAccountLock: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

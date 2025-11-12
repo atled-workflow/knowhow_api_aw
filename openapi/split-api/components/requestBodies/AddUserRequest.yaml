@@ -1,0 +1,50 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+        - loginId
+        - name
+        - password
+      allOf:
+        - $ref: ../schemas/AddUserRequest.yaml
+    example:
+      availableDateFrom: 1900-01-01 00:00:00 JST
+      availableDateTo: 2060-12-31 00:00:00 JST
+      code: user01
+      displayLanguage: ja
+      importCode: user01
+      isAccountLock: false
+      isForceChangePassword: true
+      kana: テラサキケイイチ
+      localeName: ja
+      localizedName: ''
+      loginId: user01
+      mailAddress: user01@example.com
+      name: 寺崎啓一
+      password: user01_Pw
+      remarks: 備考
+      reserveItems:
+        reserveItem1: a
+        reserveItem2: b
+        reserveItem3: c
+        reserveItem4: d
+        reserveItem5: e
+        reserveItem6: f
+        reserveItem7: g
+        reserveItem8: h
+        reserveItem9: i
+        reserveItem10: j
+        reserveItem11: k
+        reserveItem12: l
+        reserveItem13: m
+        reserveItem14: 'n'
+        reserveItem15: o
+        reserveItem16: p
+        reserveItem17: q
+        reserveItem18: r
+        reserveItem19: s
+        reserveItem20: t
+      stampName: 寺崎(啓)
+      validityDateFrom: 1900-01-01 00:00:00 JST
+      validityDateTo: 2060-12-31 00:00:00 JST

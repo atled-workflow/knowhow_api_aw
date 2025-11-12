@@ -1,0 +1,36 @@
+description: 添付ファイルがURLのときはapplication/json、FILEのときはmultipart/form-dataを指定します。
+content:
+  application/json:
+    schema:
+      required:
+        - id
+        - docId
+        - type
+        - name
+        - url
+      allOf:
+        - $ref: ../schemas/UpdateDocAttachmentRequest.yaml
+    example:
+      id: 9999
+      docId: 999
+      type: URL
+      name: urlname
+      url: https://atled.jp/AgileWorks/Broker/Picus
+  multipart/form-data:
+    schema:
+      type: object
+      required:
+        - request
+        - attachment
+      properties:
+        request:
+          type: object
+          allOf:
+            - $ref: ../schemas/UpdateDocAttachmentRequest.yaml
+          description: |
+            application/jsonと同様です。<br>
+            必須項目はid,docId,typeです。
+        attachment:
+          type: string
+          format: uuid
+          description: アップロードファイルを指定します。

@@ -1,0 +1,7 @@
+required: true
+content:
+  application/json:
+    schema:
+      description: 書類ID
+      type: integer
+      example: 999

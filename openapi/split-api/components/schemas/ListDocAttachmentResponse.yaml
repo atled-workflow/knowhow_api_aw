@@ -1,0 +1,17 @@
+type: object
+pattern: doc.ListDocAttachmentResponseModel
+properties:
+  docAttachmentList:
+    description: 書類添付情報一覧
+    type: object
+    pattern: doc.DocAttachmentListModel
+    properties:
+      entries:
+        description: 書類添付情報
+        type: array
+        items:
+          allOf:
+            - $ref: ./docAttachment.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

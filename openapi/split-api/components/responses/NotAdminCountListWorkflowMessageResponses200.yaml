@@ -1,0 +1,62 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      type: object
+      pattern: workflow.notadmin.NotAdminCountListResponseModel
+      properties:
+        countList:
+          description: 指定した回付情報の件数の一覧
+          type: object
+          pattern: workflow.notadmin.NotAdminCountListModel
+          properties:
+            entries:
+              description: 書類情報
+              type: array
+              items:
+                type: object
+                pattern: workflow.notadmin.NotAdminCountModel
+                properties:
+                  code:
+                    allOf:
+                      - $ref: ../schemas/workflowMessageType.yaml
+                  name:
+                    description: 回付情報の名称
+                    type: string
+                  count:
+                    description: 件数
+                    type: integer
+        resultStatus:
+          allOf:
+            - $ref: ../schemas/resultStatus.yaml
+    examples:
+      正常:
+        value:
+          countList:
+            entries:
+              - code: APPROVE_REQUEST
+                name: 承認依頼
+                count: 1
+              - code: CONFIRM_REQUEST
+                name: 報告確認
+                count: 2
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          countList:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

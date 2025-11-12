@@ -1,0 +1,12 @@
+description: Error response(Not Found)
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        error_code:
+          type: integer
+          example: 404
+        error_message:
+          type: string
+          example: '{エラーメッセージ}'

@@ -1,0 +1,66 @@
+type: object
+pattern: workflow.FindWorkflowTaskResponseModel
+properties:
+  workflowTaskList:
+    description: 回付情報タスク検索結果
+    type: object
+    pattern: workflow.WorkflowTaskListModel
+    properties:
+      entries:
+        description: 回付情報タスク一覧
+        type: array
+        items:
+          type: object
+          pattern: workflow.WorkflowTaskModel
+          properties:
+            state:
+              description: |
+                タスクの状態<br>
+                |パラメータ|説明|
+                |----|----|
+                |NOTHING|予定無し|
+                |FORECAST|予定されている|
+                |ACTIVE|有効|
+                |DONE|終了|
+                |CANCELED|取り消し|
+              type: string
+              pattern: workflow.EnumWorkflowTaskStateType
+            reserveItems:
+              description: |
+                拡張項目<br>
+                *未使用
+            operator:
+              description: タスク処理者
+              allOf:
+                - $ref: ./commonOperatorModel.yaml
+            ruleEffector:
+              description: タスク作用
+              type: object
+              pattern: rule.RuleEffectorHeaderModel
+              properties:
+                name:
+                  description: 作用名称
+                  type: string
+                type:
+                  allOf:
+                    - $ref: ./effectorType.yaml
+            isProxy:
+              description: 代理タスクフラグ
+              type: boolean
+            effectDate:
+              description: 作用日
+              type: string
+              pattern: >-
+                ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+                (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+            deprivedRuleStepHeader:
+              description: 引上げ元ルールステップ
+              allOf:
+                - $ref: ./ruleStepHeader.yaml
+            ruleStepHeader:
+              description: ステップ情報
+              allOf:
+                - $ref: ./ruleStepHeader.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

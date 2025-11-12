@@ -1,0 +1,7 @@
+description: ユーザーID
+name: USER_ID
+in: path
+schema:
+  type: integer
+  example: 999
+required: true

@@ -1,0 +1,16 @@
+description: リソースにアクセスする権限がありません。
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        schemas:
+          type: string
+          example:
+            - urn:ietf:params:scim:api:messages:2.0:Error
+        status:
+          type: integer
+          example: 403
+        detail:
+          type: string
+          example: '{エラーメッセージ}'

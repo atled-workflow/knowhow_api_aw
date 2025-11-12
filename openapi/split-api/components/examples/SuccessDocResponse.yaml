@@ -1,0 +1,57 @@
+value:
+  doc:
+    docData:
+      entryList:
+        entries:
+          - name: 文字フィールド1
+            fieldType: TEXTFIELD
+            fieldId: textfield1
+            dataType: STRING
+            dataValue:
+              value: update
+              entryList:
+                entries: []
+          - name: 整数フィールド1
+            fieldType: INTEGERFIELD
+            fieldId: integerfield1
+            dataType: INT
+            dataValue:
+              value: 11
+              entryList:
+                entries: []
+      publicFormId: 222
+      owner:
+        type: UNIT
+        code: unit01
+      id: 999
+      version: 1.0.0
+      listNames:
+        listNames1: null
+        listNames2: null
+        listNames3: null
+        listNames4: null
+        listNames5: null
+        listNames6: null
+        listNames7: null
+        listNames8: null
+        listNames9: null
+        listNames10: null
+        listNames11: null
+        listNames12: null
+        listNames13: null
+        listNames14: null
+        listNames15: null
+        listNames16: null
+        listNames17: null
+        listNames18: null
+        listNames19: null
+        listNames20: null
+      formCode: form01
+      criterionDate: 2024-10-31 00:00:00 JST
+      adminNo: null
+  resultStatus:
+    status: SUCCESS
+    messageList:
+      entries: []
+    text: null
+    code: null

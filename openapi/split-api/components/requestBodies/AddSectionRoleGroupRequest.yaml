@@ -1,0 +1,17 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+        - name
+      allOf:
+        - $ref: ../schemas/AddSectionRoleGroupRequest.yaml
+    example:
+      code: srolegroup01
+      name: 取締役
+      sortNo: 1
+      explanation: 説明
+      roleCodeList:
+        entries:
+          - code: srole01
+          - code: srole02

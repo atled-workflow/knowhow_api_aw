@@ -1,0 +1,28 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SCIMUsersCountResponse.yaml
+    example:
+      value:
+        schemas:
+          - urn:ietf:params:scim:api:messages:2.0:ListResponse
+        totalResults: 1
+        Resources:
+          - id: 999
+            externalId: user001
+            displayName: user001
+            userName: user001
+            emails:
+              - value: user001@atled.jp
+                primary: true
+            active: true
+            roles:
+              - value: 9999
+                display: UR_001
+            groups:
+              - value: 8888
+                display: org001
+            schemas:
+              - urn:ietf:params:scim:schemas:core:2.0:User

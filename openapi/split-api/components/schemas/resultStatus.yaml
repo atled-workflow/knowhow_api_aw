@@ -1,0 +1,29 @@
+description: APIの実行結果
+type: object
+pattern: common.ResultStatusModel
+properties:
+  status:
+    description: 結果ステータス
+    type: string
+  messageList:
+    description: メッセージ詳細
+    type: object
+    pattern: common.MessageModel
+    properties:
+      entries:
+        type: array
+        items:
+          type: object
+          properties:
+            text:
+              description: 結果説明
+              type: string
+            code:
+              description: 結果コード
+              type: string
+  text:
+    description: 結果説明
+    type: string
+  code:
+    description: 結果コード
+    type: string

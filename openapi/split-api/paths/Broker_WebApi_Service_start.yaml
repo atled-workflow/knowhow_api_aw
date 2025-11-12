@@ -1,0 +1,22 @@
+post:
+  tags:
+    - WorkflowAPI
+  summary: 書類作成/申請
+  description: >-
+    書類を作成または申請します。
+  operationId: start
+  requestBody:
+    $ref: ../components/requestBodies/StartRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/ResultStatusResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

@@ -1,0 +1,25 @@
+post:
+  tags:
+    - OrgAPI
+  summary: ユーザー参照
+  description: >-
+    指定されたパラメータのユーザーを参照します。<br>
+        ユーザーの参照には、基準日を指定する必要があります。<br>
+        指定した基準日が適用期間内に含まれるユーザーを参照します。<br>
+        また、columnValueConditionListで検索条件を指定できます。
+  operationId: FindUser
+  requestBody:
+    $ref: ../components/requestBodies/FindUserRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/FindUserResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

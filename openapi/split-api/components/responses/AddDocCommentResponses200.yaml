@@ -1,0 +1,107 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/AddDocCommentResponse.yaml
+    examples:
+      正常:
+        value:
+          docComment:
+            id: 9999
+            comment: comment
+            ruleStepHeader:
+              name: 申請
+              type: APPLY
+              index: 1
+              code: STEP1
+            effectorType: null
+            operatorInfo:
+              registrationDate: 2024-10-31 00:00:00 JST
+              modifyDate: 2024-10-31 12:00:00 JST
+              registrantOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifierOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifier:
+                userName: ユーザー01
+                unitName: 組織01
+                unitCode: unit01
+                roleName: null
+                userCode: user01
+                roleCode: null
+              registrant:
+                userName: ユーザー01
+                unitName: 組織01
+                unitCode: unit01
+                roleName: null
+                userCode: user01
+                roleCode: null
+            docId: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          docComment:
+            id: null
+            comment: null
+            ruleStepHeader:
+              name: null
+              type: null
+              index: null
+              code: null
+            effectorType: null
+            operatorInfo:
+              registrationDate: null
+              modifyDate: null
+              registrantOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifierOfShared:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              modifier:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+              registrant:
+                userName: null
+                unitName: null
+                unitCode: null
+                roleName: null
+                userCode: null
+                roleCode: null
+            docId: null
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

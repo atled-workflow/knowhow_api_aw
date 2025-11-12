@@ -1,0 +1,37 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/NotAdminListProxyAppointmentResponse.yaml
+    examples:
+      正常:
+        value:
+          proxyAppointmentList:
+            entries:
+              - id: 999
+                proxyUserCode: user01
+                principalUserCode: user01
+                principalUnitCode: unit01
+                formType: All
+                targetFormList:
+                  entries:
+                    - formCode: form01
+                ruleType: All
+                targetRuleList:
+                  entries:
+                    - ruleCode: rule01
+                criterionDate: 2024-12-31 00:00:00 JST
+                availableDateFrom: 1900-01-01 00:00:00 JST
+                availableDateTo: 2060-12-31 00:00:00 JST
+                isDisplayTodoMenu: true
+                isSendNotification: true
+                sortNo: null
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

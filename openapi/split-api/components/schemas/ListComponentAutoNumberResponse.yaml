@@ -1,0 +1,46 @@
+type: object
+pattern: form.ListAutoNumberComponentResponseModel
+properties:
+  autoNumber:
+    description: 自動採番コンポーネント
+    type: object
+    pattern: form.AutoNumberComponentProjectListModel
+    properties:
+      entries:
+        type: array
+        items:
+          type: object
+          pattern: form.AutoNumberComponentProjectModel
+          properties:
+            name:
+              description: 業務カテゴリ名
+              type: string
+            id:
+              description: 業務カテゴリID
+              type: integer
+            code:
+              description: 業務カテゴリコード
+              type: string
+            componentList:
+              description: 自動採番コンポーネントリスト
+              type: object
+              pattern: form.AutoNumberComponentListModel
+              properties:
+                entries:
+                  type: array
+                  items:
+                    type: object
+                    pattern: form.AutoNumberComponentModel
+                    properties:
+                      name:
+                        description: コンポーネント名称
+                        type: string
+                      id:
+                        description: コンポーネントID
+                        type: integer
+                      code:
+                        description: コンポーネントコード
+                        type: string
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

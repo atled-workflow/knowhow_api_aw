@@ -1,0 +1,13 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/ListPublicFolderInfoResponse.yaml
+    examples:
+      正常:
+        $ref: ../examples/ListPublicFolderInfoSuccessResponse.yaml
+      パラメータが不正:
+        $ref: ../examples/ListPublicFolderInfoErrorResponse.yaml
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

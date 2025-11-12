@@ -1,0 +1,40 @@
+post:
+  tags:
+    - common
+  summary: サービス実行
+  description: >-
+    AgileWorksの各サービスを実行します。<br>
+    （管理者権限必須API）管理ロールの「全てのコンテンツ、全ての業務カテゴリの権限を持つ管理ロール」を有しているユーザーで実行することができます。
+    （管理者権限不要API）管理ロールの「全てのコンテンツ、全ての業務カテゴリの権限を持つ管理ロール」の所属有無に問わず、実行することができます。
+  operationId: service
+  parameters:
+    - $ref: ../components/parameters/service_name.yaml
+    - $ref: ../components/parameters/service_method.yaml
+  requestBody:
+    $ref: ../components/requestBodies/nonParameter.yaml
+  responses:
+    '200':
+      description: すべてのサービス実行APIは共通でcommon.ResponseModel型のフィールドがレスポンスボディに含まれます。
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/resultStatus.yaml
+          example:
+            value:
+              resultStatus:
+                status: SUCCESS
+                messageList:
+                  entries: []
+                text: null
+                code: null
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

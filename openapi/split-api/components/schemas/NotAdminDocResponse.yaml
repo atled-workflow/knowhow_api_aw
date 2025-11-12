@@ -1,0 +1,60 @@
+type: object
+pattern: doc.notadmin.NotAdminDocResponseModel
+properties:
+  doc:
+    description: 書類情報
+    type: object
+    pattern: doc.notadmin.NotAdminDocModel
+    properties:
+      docData:
+        description: 書類データ
+        type: object
+        pattern: doc.notadmin.NotAdminDocDataModel
+        properties:
+          entryList:
+            description: 各フィールドのデータ
+            type: object
+            pattern: doc.notadmin.NotAdminDocDataEntryListModel
+            properties:
+              entries:
+                type: array
+                pattern: doc.notadmin.NotAdminDocDataEntryModel
+                items:
+                  type: object
+                  properties:
+                    name:
+                      description: フィールド名
+                      type: string
+                    fieldType:
+                      description: フィールドタイプ
+                      type: string
+                    fieldId:
+                      description: フィールドID
+                      type: string
+                    dataType:
+                      description: データタイプ
+                      type: string
+                    dataValue:
+                      description: フィールドの値
+                      type: object
+                      pattern: doc.notadmin.NotAdminDocDataValueModel
+                      properties:
+                        value:
+                          description: |
+                            フィールドの値<br>
+                            *通常フィールドの場合のみ
+                          pattern: dataTypeの型
+                        entryList:
+                          description: |
+                            表明細フィールドのリスト<br>
+                            *表明細フィールドの場合のみ
+                          type: object
+                          pattern: doc.notadmin.notAdminDocDataEntryListModel
+      publicFormId:
+        description: 公開フォームID
+        type: integer
+    allOf:
+      - $ref: ./NotAdminGetDoc.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

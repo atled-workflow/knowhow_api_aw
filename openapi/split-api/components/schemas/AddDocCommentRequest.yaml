@@ -1,0 +1,29 @@
+type: object
+pattern: doc.DocCommentModel
+properties:
+  docId:
+    description: 書類ID
+    type: integer
+  comment:
+    description: コメント内容
+    type: string
+  operationInfo:
+    description: 操作情報
+    type: object
+    pattern: common.OperationInfoModel
+    required:
+      - registrant
+    properties:
+      registrant:
+        description: |
+          登録ユーザー<br>
+          *登録ユーザー(registrant)の userCode を null の値以外入力時に「登録ユーザー」へ反映される
+        type: object
+        pattern: common.OperatorModel
+        required:
+          - userCode
+        properties:
+          userCode:
+            description: |
+              ユーザーコード<br>
+              *登録ユーザー(registrant)の userCode は必須

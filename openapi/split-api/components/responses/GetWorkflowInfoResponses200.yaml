@@ -1,0 +1,115 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/GetWorkflowInfoResponse.yaml
+    examples:
+      正常:
+        value:
+          workflowInfo:
+            createOperator:
+              userName: null
+              userCode: null
+              roleCode: null
+              unitCode: null
+              unitName: null
+              roleName: null
+            currentRulesStepHeaderList:
+              entries:
+                - name: 承認
+                  type: APPROVE
+                  index: 2
+                  code: STEP2
+            applyOperator:
+              userName: ユーザー１
+              userCode: user01
+              roleCode: null
+              unitCode: unit01
+              unitName: 組織１
+              roleName: null
+            formName: フォーム
+            criterionDate: 2024-10-31 00:00:00 JST
+            createDate: 2024-10-30 12:00:00 JST
+            lastOperator:
+              userName: ユーザー１
+              userCode: user01
+              roleCode: null
+              unitCode: unit01
+              unitName: 組織１
+              roleName: null
+            docId: 999
+            approvedDate: null
+            applyDate: 2024-10-30 13:00:00 JST
+            formCode: form01
+            workflowState: ACTIVE
+            proxyApplyOperator:
+              userName: null
+              userCode: null
+              roleCode: null
+              unitCode: null
+              unitName: null
+              roleName: null
+            ruleCode: rule01
+            ruleName: ルール１
+            lastOperateDate: 2024-10-30 13:00:00 JST
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          workflowInfo:
+            createOperator:
+              userName: null
+              userCode: null
+              roleCode: null
+              unitCode: null
+              unitName: null
+              roleName: null
+            currentRulesStepHeaderList:
+              entries: []
+            applyOperator:
+              userName: null
+              userCode: null
+              roleCode: null
+              unitCode: null
+              unitName: null
+              roleName: null
+            formName: null
+            criterionDate: null
+            createDate: null
+            lastOperator:
+              userName: null
+              userCode: null
+              roleCode: null
+              unitCode: null
+              unitName: null
+              roleName: null
+            docId: null
+            approvedDate: null
+            applyDate: null
+            formCode: null
+            workflowState: null
+            proxyApplyOperator:
+              userName: null
+              userCode: null
+              roleCode: null
+              unitCode: null
+              unitName: null
+              roleName: null
+            ruleCode: null
+            ruleName: null
+            lastOperateDate: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

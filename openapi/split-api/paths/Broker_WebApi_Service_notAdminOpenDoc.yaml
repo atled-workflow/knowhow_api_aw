@@ -1,0 +1,22 @@
+post:
+  tags:
+    - NotAdminAPI
+  summary: (管理者権限不要) 書類表示
+  description: >-
+    API 実行ユーザーが閲覧可能な書類を表示する HTML を取得する API です。
+  operationId: notAdminGetDocView
+  requestBody:
+    $ref: ../components/requestBodies/NotAdminOpenDocRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/TextHtmlResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

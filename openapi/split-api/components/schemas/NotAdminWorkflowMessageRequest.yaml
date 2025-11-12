@@ -1,0 +1,36 @@
+type: object
+pattern: workflow.notadmin.NotAdminWorkflowMessageConditionModel
+required:
+  - workflowMessageType
+properties:
+  userCode:
+    description: |
+      ユーザーコード<br>
+      下記のいずれかを指定<br>
+      ・API 実行ユーザー<br>
+      ・API 実行ユーザーの代理元承認ユーザー<br>
+      *未指定の場合は、API 実行ユーザー
+    type: string
+  workflowMessageType:
+    description: |
+      回付情報タイプ<br>
+      指定可能な値<br>
+      userCodeがAPI実行ユーザーの場合<br>
+      |パラメータ|説明|
+      |----|----|
+      |APPLY_REQUEST|申請依頼|
+      |APPROVE_REQUEST|承認依頼|
+      |CONFIRM_REQUEST|報告依頼|
+      |PREPARE|下書き|
+      |REMANDED|差戻し|
+      |REMIND_EXIST|督促あり|
+      |REQUEST_POSSIBLE|回付予定|
+      <br>
+      userCodeがAPI実行ユーザーの代理承認元ユーザーの場合<br>
+      |パラメータ|説明|
+      |----|----|
+      |APPROVE_REQUEST|承認依頼|
+      |CONFIRM_REQUEST|報告依頼|
+      |REMANDED|差戻し|
+    type: string
+    pattern: workflow.EnumWorkflowMessageType

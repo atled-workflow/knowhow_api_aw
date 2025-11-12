@@ -1,0 +1,22 @@
+post:
+  tags:
+    - NotAdminAPI
+  summary: （管理者権限不要）回付情報検索
+  description: >-
+    API 実行ユーザーが閲覧可能な回付情報の一覧を検索する API です。
+  operationId: notAdminSelectWorkflowMessage
+  requestBody:
+    $ref: ../components/requestBodies/NotAdminSelectWorkflowMessageRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/SelectWorkflowMessageResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

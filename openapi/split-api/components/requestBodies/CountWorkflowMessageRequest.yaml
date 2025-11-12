@@ -1,0 +1,16 @@
+content:
+  application/json:
+    schema:
+      required:
+        - condition
+      type: object
+      pattern: workflow.CountWorkflowMessageRequestModel
+      properties:
+        condition:
+          description: 回付情報件数の取得条件
+          allOf:
+            - $ref: ../schemas/WorkflowMessageRequest.yaml
+    example:
+      condition:
+        userCode: user01
+        workflowMessageType: APPROVE_REQUEST

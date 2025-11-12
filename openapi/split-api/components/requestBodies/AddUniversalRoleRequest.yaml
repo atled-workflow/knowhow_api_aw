@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+        - name
+        - folderCode
+      allOf:
+        - $ref: ../schemas/AddUniversalRoleRequest.yaml
+    example:
+      code: urole01
+      importCode: urole01
+      name: ユニバーサルロール
+      explanation: ユニバーサルロール
+      folderCode: null

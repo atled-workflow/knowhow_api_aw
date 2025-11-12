@@ -1,0 +1,44 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/ListComponentMasterWindowResponse.yaml
+    examples:
+      正常:
+        value:
+          masterWindow:
+            entries:
+              - name: 製品管理
+                id: 100001
+                code: seihin
+                componentList:
+                  entries:
+                    - name: チケット優先度
+                      id: 1
+                      code: emerg
+                      masterData: 製品指摘優先度マスタ
+                      column:
+                        entries:
+                          - name: ランク
+                            columnName: RANK
+                          - name: 備考
+                            columnName: REMARKS
+                    - name: 担当者
+                      id: 1
+                      code: shozoku
+                      masterData: 所属マスタ
+                      column:
+                        entries:
+                          - name: ユーザーコード
+                            columnName: userCode
+                          - name: ユーザー名
+                            columnName: userName
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

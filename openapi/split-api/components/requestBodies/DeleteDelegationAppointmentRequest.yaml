@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: org.DelegationAppointmentModel
+      properties:
+        id:
+          description: |
+            削除対象権限委譲のID<br>
+            *「権限委譲作成API」または「権限委譲参照API」で取得した値を指定
+          type: integer
+          example: 999

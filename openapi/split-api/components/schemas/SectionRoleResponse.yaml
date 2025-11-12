@@ -1,0 +1,15 @@
+type: object
+pattern: org.SectionRoleResponseModel
+properties:
+  sectionRole:
+    description: セクションロール情報
+    type: object
+    properties:
+      id:
+        description: セクションロールのid
+        type: integer
+    allOf:
+      - $ref: ./AddSectionRoleRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

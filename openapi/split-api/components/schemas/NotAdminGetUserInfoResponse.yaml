@@ -1,0 +1,98 @@
+type: object
+pattern: system.notadmin.NotAdminGetUserInfoResponseModel
+properties:
+  userInfo:
+    description: ユーザー情報のモデル
+    type: object
+    pattern: system.notadmin.NotAdminGetUserInfoModel
+    properties:
+      user:
+        description: ユーザー情報のモデル
+        type: object
+        pattern: system.notadmin.NotAdminUserModel
+        properties:
+          code:
+            description: ユーザーコード
+            type: string
+          name:
+            description: ユーザー名
+            type: string
+          loginId:
+            description: ログインID
+            type: string
+          diplayLanguage:
+            description: |
+              表示言語<br>
+              |パラメータ|説明|
+              |----|----|
+              |ja|日本語|
+              |en|英語|
+              |zh_CN|簡体字|
+              |zh_TW|繁体字|
+              |auto|ブラウザ設定に従う|
+            type: string
+            pattern: system.notadmin.EunmNotAdminDisplayLanguage
+      unit:
+        description: 組織所属情報
+        type: object
+        pattern: system.notadmin.NotAdminUnitAppointmentListModel
+        properties:
+          entries:
+            type: array
+            items:
+              type: object
+              pattern: system.notadmin.NotAdminUnitAppointmentModel
+              properties:
+                code:
+                  description: 組織コード
+                  type: string
+                name:
+                  description: 組織名
+                  type: string
+                isMainUnit:
+                  description: 主務組織かどうか
+                  type: boolean
+                sectionRoleCode:
+                  description: |
+                    セクションロールコード<br>
+                    *組織所属にセクションロールがない場合はnull
+                  type: string
+                sectionRoleName:
+                  description: |
+                    セクションロール名<br>
+                    *組織所属にセクションロールがない場合はnull
+                  type: string
+      role:
+        description: 公開フォルダ名称
+        type: object
+        pattern: system.notadmin.NotAdminRoleAppointmentListmodel
+        properties:
+          entries:
+            type: array
+            items:
+              type: object
+              pattern: system.notadmin.NotAdminRoleAppointmentmodel
+              properties:
+                type:
+                  description: |
+                    ロール種別<br>
+                    |パラメータ|説明|
+                    |----|----|
+                    |universalRole|ユニバーサルロール|
+                    |privateRole|プライベートロール|
+                  type: string
+                  pattern: system.notadmin.NotAdminRoleType
+                code:
+                  description: ロールコード
+                  type: string
+                name:
+                  description: ロール名
+                  type: string
+  systemName:
+    description: |
+      システム名<br>
+      *管理サイト＞サイト管理＞サイト共通設定＞システム＞サイト情報＞で設定するシステム名
+    type: string
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

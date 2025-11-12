@@ -1,0 +1,46 @@
+type: object
+pattern: org.FindPrivateRoleRequestModel
+properties:
+  condition:
+    description: プライベートロール検索条件
+    type: object
+    pattern: org.PrivateRoleConditionModel
+    properties:
+      code:
+        description: プライベートロールコード
+        type: string
+      name:
+        description: プライベートロール名称
+        type: string
+      columnValueConditionList:
+        description: 任意検索条件一覧
+        type: object
+        pattern: org.PrivateRoleColumnValueConditionListModel
+        properties:
+          entries:
+            description: 任意検索条件
+            type: array
+            items:
+              type: object
+              pattern: org.PrivateRoleConditionModel
+              properties:
+                column:
+                  description: |
+                    フィールド値タイプ<br>
+                    指定可能な値<br>
+                    |パラメータ|説明|
+                    |----|----|
+                    |Code|コード|
+                    |Name|名称|
+                  type: string
+                  pattern: org.EnumPrivateRoleFieldType
+                compareOperatorType:
+                  allOf:
+                    - $ref: ./compareOperatorType.yaml
+                value:
+                  description: 値
+                  type: string
+          logicalOperator:
+            description: |
+              任意検索全体の AND / OR<br>
+              *AND または OR を指定

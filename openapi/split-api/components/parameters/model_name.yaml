@@ -1,0 +1,12 @@
+description: |
+  {名前空間}.{モデル名}<br>
+  取得したいモデルオブジェクトに応じて指定してください。<br>
+  ・名前空間：<br>
+    （管理者権限必須API）common, doc, workflow, org, site, usermaster, form, publication<br>
+    （管理者権限不要API）doc.notadmin, workflow.notadmin, org.notadmin, publication.notadmin, system.notadmin<br>
+  ・モデル名：APIの各ページのスキーマを参照
+name: name
+in: query
+schema:
+  type: string
+  example: doc.PrepareDocRequestModel

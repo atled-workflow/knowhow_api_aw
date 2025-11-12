@@ -1,0 +1,55 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/ProxyApplyAppointmentResponse.yaml
+    examples:
+      正常:
+        value:
+          proxyApplicationAppointment:
+            id: 999
+            targetFormList:
+              entries:
+                - formCode: form01
+            targetRuleList:
+              entries:
+                - ruleCode: rule01
+            isDisplayCreateMenu: true
+            availableDateFrom: 1900-01-01 00:00:00 JST
+            principalUnitCode: unit01
+            principalUserCode: user01
+            proxyUserCode: user02
+            availableDateTo: 2024-12-31 00:00:00 JST
+            criterionDate: 1900-01-01 00:00:00 JST
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          proxyApplicationAppointment:
+            id: null
+            targetFormList:
+              entries: []
+            targetRuleList:
+              entries: []
+            isDisplayCreateMenu: null
+            availableDateFrom: null
+            principalUnitCode: null
+            principalUserCode: null
+            proxyUserCode: null
+            availableDateTo: null
+            criterionDate: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

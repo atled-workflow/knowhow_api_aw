@@ -1,0 +1,87 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SelectWorkflowMessageResponse.yaml
+    examples:
+      正常:
+        value:
+          resultSet:
+            fieldList:
+              entries:
+                - name: APPLY_UNIT_NAME
+                  type: STRING
+                - name: APPLY_USER_NAME
+                  type: STRING
+                - name: APPLY_DATE
+                  type: DATETIME
+                - name: DOC_LISTNAME3
+                  type: STRING
+                - name: FORM_NAME
+                  type: STRING
+                - name: RULE_NAME
+                  type: STRING
+                - name: FLOW_CURRENTSTEP_NAME
+                  type: TEXT
+                - name: FLOW_STATUS
+                  type: STRING
+                - name: DOC_ADMIN_NO
+                  type: STRING
+                - name: DOC_ID
+                  type: LONG
+                - name: DOC_EXIST_COMMENT
+                  type: BOOLEAN
+                - name: DOC_EXIST_ATTACHMENT
+                  type: BOOLEAN
+            recordList:
+              entries:
+                - index: null
+                  entryList:
+                    entries:
+                      - name: ApplyUnitName
+                        value: 組織
+                      - name: ApplyUserName
+                        value: user01
+                      - name: ApplyDate
+                        value: 2024-10-31 00:00:00 JST
+                      - name: DocListName3
+                        value: null
+                      - name: FormName
+                        value: フォーム
+                      - name: RuleName
+                        value: ルール
+                      - name: FlowCurrentStepName
+                        value: 承認
+                      - name: FlowStatus
+                        value: 回付中
+                      - name: DocAdminNo
+                        value: null
+                      - name: DocId
+                        value: 999
+                      - name: DocExistComment
+                        value: true
+                      - name: DocExistAttachment
+                        value: false
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          resultSet:
+            fieldList:
+              entries: []
+            recordList:
+              entries: []
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

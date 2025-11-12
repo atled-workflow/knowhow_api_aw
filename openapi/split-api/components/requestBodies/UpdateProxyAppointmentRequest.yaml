@@ -1,0 +1,32 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+        - principalUserCode
+        - proxyUserCode
+      type: object
+      properties:
+        id:
+          description: |
+            更新対象代理承認のID<br>
+            *「代理承認作成API」または「代理承認参照API」で取得した値を指定
+          type: integer
+      allOf:
+        - $ref: ../schemas/AddProxyAppointmentRequest.yaml
+    example:
+      id: 999
+      principalUserCode: user01
+      principalUnitCode: unit01
+      proxyUserCode: user02
+      targetFormList:
+        entries:
+          - formCode: form01
+      targetRuleList:
+        entries:
+          - ruleCode: rule01
+      isSendNotification: true
+      isDisplayTodoMenu: true
+      availableDateFrom: 1900-01-01 00:00:00 JST
+      avalableDateTo: 2060-12-31 00:00:00 JST
+      criterionDate: 2024-10-31 00:00:00 JST

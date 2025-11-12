@@ -1,0 +1,10 @@
+type: object
+pattern: doc.DocHeaderResponseModel
+properties:
+  docHeader:
+    description: 書類情報
+    allOf:
+      - $ref: ./GetDoc.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

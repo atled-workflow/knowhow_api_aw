@@ -1,0 +1,17 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindPrivateRoleAppointmentRequest.yaml
+    example:
+      condition:
+        userCode: user01
+        roleCode: prole01
+        candidateCode: user02
+        columnValueConditionList:
+          entries:
+            - column: CandidateCode
+              compareOperator: LIKE
+              value: u
+          logicalOperator: AND
+        criterionDate: 2024-10-31 00:00:00 JST

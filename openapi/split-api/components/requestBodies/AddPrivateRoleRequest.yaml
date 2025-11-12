@@ -1,0 +1,26 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+        - name
+        - folderCode
+      allOf:
+        - $ref: ../schemas/AddPrivateRoleRequest.yaml
+    example:
+      code: prole01
+      importCode: prole01
+      name: プライベートロール
+      explanation: プライベートロール
+      folderCode: proleFolder
+      isWarnIfCandidateNotAssigned: false
+      candidateList:
+        entries:
+          - type: USER
+            userCode: user01
+          - type: ROLE
+            roleCode: srole01
+            roletype: SECTION
+      guidance:
+        subject: 件名
+        text: 本文

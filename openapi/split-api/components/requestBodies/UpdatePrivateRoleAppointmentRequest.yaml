@@ -1,0 +1,18 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+        - userCode
+        - privateRoleCode
+        - candidateCode
+      allOf:
+        - $ref: ../schemas/UpdatePrivateRoleAppointmentRequest.yaml
+    example:
+      id: 999
+      userCode: user01
+      privateRoleCode: prole01
+      candidateCode: user02
+      availableDateFrom: 1900-01-01 00:00:00 JST
+      availableDateTo: 2060-12-31 00:00:00 JST
+      criterionDate: 2024-10-31 00:00:00 JST

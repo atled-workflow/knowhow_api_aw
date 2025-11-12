@@ -1,0 +1,83 @@
+type: object
+pattern: org.UserModel
+properties:
+  name:
+    description: ユーザー名称
+    type: string
+  diplayLanguage:
+    description: |
+      表示言語<br>
+      以下のいずれかを指定<br>
+      auto：ブラウザ設定に従う<br>
+      ja：日本語<br>
+      en：英語<br>
+      zh_CN：中文（簡体）<br>
+      zh_TW：中文（繁体）
+    type: string
+  localeName:
+    description: ローカル名称の言語名
+    type: string
+  localizedName:
+    description: ローカル名称
+    type: string
+  password:
+    description: パスワード
+    type: string
+  reserveItems:
+    allOf:
+      - $ref: ./reserveItems.yaml
+  validityDateTo:
+    description: 履歴終了日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  loginId:
+    description: ログインID
+    type: string
+  code:
+    description: ユーザーコード
+    type: string
+  kana:
+    description: ユーザー名称カナ
+    type: string
+  availableDateTo:
+    description: 適用終了日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  stampName:
+    description: 印影
+    type: string
+  mailAddress:
+    description: メールアドレス
+    type: string
+  remarks:
+    description: 備考
+    type: string
+  importCode:
+    description: インポートコード
+    type: string
+  availableDateFrom:
+    description: 適用開始日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  validityDateFrom:
+    description: 履歴開始日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  isNeedStampImage:
+    type: string
+  isForceChangePassword:
+    description: |
+      次回ログイン時にパスワード変更を求めるかどうか<br>
+      *true の指定は無効
+    type: boolean
+  isAccountLock:
+    description: アカウントロックフラグ
+    type: boolean

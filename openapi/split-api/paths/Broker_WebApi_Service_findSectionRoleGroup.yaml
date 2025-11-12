@@ -1,0 +1,22 @@
+post:
+  tags:
+    - OrgAPI
+  summary: セクションロールグループ参照
+  description: >-
+    セクションロールグループを参照します。
+  operationId: findSectionRoleGroup
+  requestBody:
+    $ref: ../components/requestBodies/FindSectionRoleGroupRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/FindSectionRoleGroupResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

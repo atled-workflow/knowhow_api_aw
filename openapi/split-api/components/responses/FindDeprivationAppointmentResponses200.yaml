@@ -1,0 +1,42 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindDeprivationAppointmentResponse.yaml
+    examples:
+      正常:
+        value:
+          deprivationAppointmentList:
+            entries:
+              - id: 999
+                availableDateTo: 2060-12-31 00:00:00 JST
+                criterionDate: 1900-01-01 00:00:00 JST
+                userCode: user01
+                availableDateFrom: 1900-01-01 00:00:00 JST
+                targetFormList:
+                  entries:
+                    - formCode: form01
+                targetRuleList:
+                  entries:
+                    - ruleCode: rule01
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          deprivationAppointmentList:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

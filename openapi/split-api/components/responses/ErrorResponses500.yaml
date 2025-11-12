@@ -1,0 +1,12 @@
+description: Error response(Internal Server Error)
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        error_code:
+          type: integer
+          example: 500
+        error_message:
+          type: string
+          example: '{エラーメッセージ}'

@@ -1,0 +1,61 @@
+type: object
+pattern: common.SelectResponseModel
+properties:
+  resultSet:
+    description: 回付情報の検索結果
+    type: object
+    pattern: common.ResultSetModel
+    properties:
+      fieldList:
+        description: フィールド情報一覧
+        type: object
+        pattern: common.FieldListModel
+        properties:
+          entries:
+            description: フィールド情報
+            type: array
+            items:
+              type: object
+              pattern: common.FieldModel
+              properties:
+                name:
+                  description: フィールド名
+                  type: string
+                type:
+                  allOf:
+                    - $ref: ./enumDataType.yaml
+      recordList:
+        description: レコード情報一覧
+        type: object
+        pattern: common.RecordListModel
+        properties:
+          entries:
+            description: レコード情報
+            type: array
+            items:
+              type: object
+              pattern: common.RecordModel
+              properties:
+                index:
+                  description: レコードインデックス
+                  type: integer
+                entryList:
+                  description: エントリのリスト
+                  type: object
+                  pattern: common.EntryModel
+                  properties:
+                    entries:
+                      description: エントリ
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            description: 名称
+                            type: string
+                          value:
+                            description: 値
+                            type: object
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

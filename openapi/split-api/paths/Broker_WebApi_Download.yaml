@@ -1,0 +1,29 @@
+get:
+  tags:
+    - common
+  summary: ダウンロード
+  description: AgileWorks上にアップロードされている各ファイルをダウンロードします。
+  operationId: download
+  parameters:
+    - $ref: ../components/parameters/download_s.yaml
+  responses:
+    '200':
+      description: |
+        取得したファイル名は、Content-Disposition レスポンスヘッダに以下の形式で格納されます。<br>
+        ・ファイル名が全て ASCII 文字で構成される場合<br>
+        attachment;filename="<ファイル名>"<br>
+        ・ファイル名に ASCII 以外の文字を含む場合<br>
+        attachment;filename="<URL エンコードされたファイル名>"
+      content:
+        application/octet-stream:
+          example: ファイルの内容（バイナリデータ）
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

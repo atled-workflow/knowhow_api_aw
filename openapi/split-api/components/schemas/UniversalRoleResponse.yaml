@@ -1,0 +1,15 @@
+type: object
+pattern: org.UniversalRoleResponseModel
+properties:
+  universalRole:
+    description: ユニバーサルロール情報
+    type: object
+    properties:
+      id:
+        description: ユニバーサルロールのid
+        type: integer
+    allOf:
+      - $ref: ./AddUniversalRoleRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

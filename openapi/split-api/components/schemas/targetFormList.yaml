@@ -1,0 +1,14 @@
+description: 対象フォーム一覧
+type: object
+pattern: org.TargetFormListModel
+properties:
+  entries:
+    description: フォームコードのリスト
+    type: array
+    items:
+      type: object
+      pattern: org.TargetFormModel
+      properties:
+        formCode:
+          description: フォームコード
+          type: string

@@ -1,0 +1,43 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SectionRoleResponse.yaml
+    examples:
+      正常:
+        value:
+          sectionRole:
+            rank: 1
+            name: 課長
+            explanation: 備考
+            code: srole01
+            importCode: srole01
+            folderCode: null
+            id: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          sectionRole:
+            rank: null
+            name: null
+            explanation: null
+            code: null
+            importCode: null
+            folderCode: null
+            id: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

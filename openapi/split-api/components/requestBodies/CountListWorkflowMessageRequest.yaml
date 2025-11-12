@@ -1,0 +1,26 @@
+content:
+  application/json:
+    schema:
+      required:
+        - conditionList
+      type: object
+      pattern: workflow.CountListWorkflowMessageRequestModel
+      properties:
+        conditionList:
+          description: 回付情報件数の取得条件のリスト
+          type: object
+          pattern: workflow.WorkflowMessageConditionListModel
+          required:
+            - entries
+          properties:
+            entries:
+              description: 回付情報件数の取得条件
+              allOf:
+                - $ref: ../schemas/WorkflowMessageRequest.yaml
+    example:
+      conditionList:
+        entries:
+          - userCode: user01
+            workflowMessageType: APPROVE_REQUEST
+          - userCode: user01
+            workflowMessageType: CONFIRM_REQUEST

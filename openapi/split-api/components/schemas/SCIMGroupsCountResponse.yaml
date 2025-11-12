@@ -1,0 +1,16 @@
+type: object
+properties:
+  schemas:
+    description: |
+      スキーマ<br>
+      *"urn:ietf:params:scim:api:messages:2.0:ListResponse" 固定
+    type: string
+  totalResults:
+    description: 検索結果件数
+    type: integer
+  Resources:
+    description: 組織情報
+    type: array
+    items:
+      allOf:
+        - $ref: ./SCIMGroupsResponse.yaml

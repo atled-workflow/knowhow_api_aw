@@ -1,0 +1,17 @@
+type: object
+pattern: system.notadmin.NotAdminGetVersionResponseModel
+properties:
+  versionInfo:
+    description: バージョン情報のモデル
+    type: object
+    pattern: system.notadmin.NotAdminVersionInfoModel
+    properties:
+      versionInfo:
+        description: AgileWorksのリリースバージョン
+        type: string
+      buildNumber:
+        description: AgileWorksのビルド番号
+        type: integer
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

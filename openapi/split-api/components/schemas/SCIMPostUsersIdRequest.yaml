@@ -1,0 +1,65 @@
+type: object
+properties:
+  externalId:
+    description: ユーザーコード
+    type: string
+  userName:
+    description: ログインID
+    type: string
+  displayName:
+    description: ユーザー名称
+    type: string
+  locale:
+    description: 言語
+    type: string
+  active:
+    description: |
+      アカウント状態<br>
+      true：ログイン可能<br>
+      false：ログイン不可
+    type: boolean
+  emails:
+    description: メール情報
+    type: array
+    items:
+      type: object
+      properties:
+        value:
+          description: メールアドレス
+          type: string
+        primary:
+          description: 優先フラグ
+          type: boolean
+  roles:
+    description: ロール情報
+    type: array
+    items:
+      type: object
+      properties:
+        value:
+          description: |
+            ロールID<br>
+            *ユニバーサルロール
+          type: integer
+        display:
+          description: 表示名
+          type: string
+  groups:
+    description: グループ情報
+    type: array
+    items:
+      type: object
+      properties:
+        value:
+          description: |
+            グループID<br>
+            *組織
+          type: integer
+        display:
+          description: 表示名
+          type: string
+  schemas:
+    description: |
+      スキーマ<br>
+      *"urn:ietf:params:scim:schemas:core:2.0:User" 固定
+    type: string

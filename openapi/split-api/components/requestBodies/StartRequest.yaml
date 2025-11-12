@@ -1,0 +1,29 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - applyUnitCode
+        - applyUserCode
+        - formCode
+        - ruleCode
+      type: object
+      pattern: workflow.StartRequestModel
+      properties:
+        operateUserCode:
+          description: 処理者ユーザーコード
+          type: string
+        comment:
+          description: コメント
+          type: string
+      allOf:
+        - $ref: ../schemas/DraftRequest.yaml
+    example:
+      docId: 999
+      criterionDate: 2024-10-31 00:00:00 JST
+      applyUnitCode: unit01
+      applyUserCode: user01
+      operateUserCode: user01
+      formCode: form01
+      ruleCode: rule01
+      comment: 申請

@@ -1,0 +1,63 @@
+type: object
+pattern: doc.DocAttachmentModel
+properties:
+  name:
+    description: ファイル名称
+    type: string
+  id:
+    description: 書類添付ID
+    type: integer
+  type:
+    description: |
+      書類添付タイプ<br>
+      |パラメータ|説明|
+      |----|----|
+      |FILE|添付ファイル|
+      |URL|URL|
+    type: string
+    pattern: doc.EnumDocAttachmentType
+  size:
+    description: ファイルサイズ
+    type: integer
+  path:
+    description: エンコードされたパス情報
+    type: string
+  explanation:
+    description: 添付書類の説明
+    type: string
+  ruleStepHeader:
+    description: 添付書類が付加されているステップ
+    allOf:
+      - $ref: ./ruleStepHeader.yaml
+  storageFile:
+    description: 添付ファイル
+    type: object
+    pattern: system.StorageFileModel
+    properties:
+      name:
+        description: ファイル名
+        type: string
+      key:
+        description: ファイルキー
+        type: string
+      id:
+        description: |
+          ファイルID<br>
+          *ダウンロードAPIで使用可能
+        type: string
+      size:
+        description: ファイルサイズ
+        type: integer
+      contentType:
+        description: MIMEタイプ
+        type: string
+  url:
+    description: URL
+    type: string
+  operationInfo:
+    description: 操作情報
+    allOf:
+      - $ref: ./operationInfo.yaml
+  docId:
+    description: 書類ID
+    type: integer

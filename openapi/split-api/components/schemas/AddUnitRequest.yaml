@@ -1,0 +1,59 @@
+type: object
+pattern: org.UnitModel
+properties:
+  code:
+    description: 組織コード
+    type: string
+  importCode:
+    description: インポートコード
+    type: string
+  parentCode:
+    description: |
+      親組織コード<br>
+      *ルート組織直下に組織を追加する場合は null
+    type: string
+  name:
+    description: 組織名称
+    type: string
+  localizedName:
+    description: ローカル名称
+    type: string
+  localeName:
+    description: ローカル名
+    type: string
+  officialName:
+    description: 組織正式名称
+    type: string
+  kana:
+    description: 組織名称カナ
+    type: string
+  remarks:
+    description: 備考
+    type: string
+  validityDateFrom:
+    description: 履歴開始日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  validityDateTo:
+    description: 履歴終了日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  availableDateFrom:
+    description: 適用開始日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  availableDateTo:
+    description: 適用終了日
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  reserveItems:
+    allOf:
+      - $ref: ./reserveItems.yaml

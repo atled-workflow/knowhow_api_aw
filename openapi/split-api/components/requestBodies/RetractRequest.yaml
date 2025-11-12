@@ -1,0 +1,12 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - ruleStepCode
+      allOf:
+        - $ref: ../schemas/RetractRequest.yaml
+    example:
+      docId: 999
+      operatorCode: user001
+      ruleStepCode: STEP2

@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+        - name
+      allOf:
+        - $ref: ../schemas/AddSectionRoleRequest.yaml
+    example:
+      code: srole01
+      importCode: srole01
+      name: 課長
+      explanation: 備考
+      folderCode: null
+      rank: 1

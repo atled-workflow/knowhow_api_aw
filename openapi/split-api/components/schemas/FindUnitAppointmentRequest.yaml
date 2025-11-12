@@ -1,0 +1,88 @@
+type: object
+pattern: org.FindUnitAppointmentRequestModel
+properties:
+  condition:
+    description: 組織所属検索条件
+    type: object
+    pattern: org.UnitAppointmentConditionModel
+    properties:
+      userCode:
+        description: ユーザーコード
+        type: string
+      unitCode:
+        description: |
+          組織コード<br>
+          *unitDirection と共に指定
+        type: string
+      unitDirection:
+        description: |
+          組織の検索種別<br>
+          *unitCode と共に指定<br>
+          *省略時は該当組織のみ<br>
+          指定可能な値<br>
+          |パラメータ|説明|
+          |----|----|
+          |ABSOLUTE|対象組織のみ|
+          |ESCALATE|対象組織と、組織の上位にある 全ての組織 or 所属を返す|
+          |CASCADE|対象組織と、対称組織の配下にある 全ての組織 or 所属を返す|
+        type: string
+        pattern: org.EnumUnitDirectionType
+      columnValueConditionList:
+        description: 任意検索条件一覧
+        type: object
+        pattern: org.UnitAppointmentColumnValueConditionListModel
+        properties:
+          entries:
+            description: 任意検索条件
+            type: array
+            items:
+              type: object
+              pattern: org.UnitAppointmentColumnValueConditionModel
+              properties:
+                column:
+                  description: |
+                    フィールド値タイプ<br>
+                    指定可能な値<br>
+                    |パラメータ|説明|
+                    |----|----|
+                    |UnitCode|組織コード|
+                    |UnitName|インポートコード|
+                    |UnitOfficialName|名称|
+                    |UnitValidityDateFrom|ローカル名称|
+                    |UnitValidityDateTo|ロケール名|
+                    |UnitAvailableDateFrom|カナ|
+                    |UnitAvailableDateTo|ログインID|
+                    |UserCode|メールアドレス|
+                    |UserName|印影名|
+                    |UserKana|備考|
+                    |UserLoginId|運用開始日|
+                    |UserMailAddress|運用終了日|
+                    |UserStampName|説明|
+                    |UserAvailableDateFrom|コード|
+                    |UserAvailableDateTo|インポートコード|
+                    |RoleCode|名称|
+                    |RoleName|ローカル名称|
+                    |RoleRank|ロケール名|
+                    |ValidityDateFrom|カナ|
+                    |ValidityDateTo|ログインID|
+                    |UnitReserveItem1～10|組織拡張項目1～10|
+                    |UserReserveItem1～10|ユーザー拡張項目1～10|
+                  type: string
+                  pattern: org.EnumUnitAppointmentFieldType
+                compareOperatorType:
+                  allOf:
+                    - $ref: ./compareOperatorType.yaml
+                value:
+                  description: 値
+                  type: string
+          logicalOperator:
+            description: |
+              任意検索全体のAND / OR<br>
+              *AND または OR を指定
+            type: string
+      criterionDate:
+        description: 基準日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$

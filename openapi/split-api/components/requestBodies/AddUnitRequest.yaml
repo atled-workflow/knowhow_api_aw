@@ -1,0 +1,43 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+        - name
+      allOf:
+        - $ref: ../schemas/AddUnitRequest.yaml
+    example:
+      code: unit02
+      importCode: unit02
+      parentCode: unit01
+      name: 組織2
+      localizedName: 組織2
+      localeName: auto
+      officialName: 組織2正式名称
+      kana: ソシキ2セイシキメイショウ
+      remarks: 備考
+      validityDateFrom: 1900-01-01 00:00:00 JST
+      validityDateTo: 2060-12-31 00:00:00 JST
+      availableDateFrom: 1900-01-01 00:00:00 JST
+      availableDateTo: 2060-12-31 00:00:00 JST
+      reserveItems:
+        reserveItem1: item1
+        reserveItem2: item2
+        reserveItem3: item3
+        reserveItem4: item4
+        reserveItem5: item5
+        reserveItem6: item6
+        reserveItem7: item7
+        reserveItem8: item8
+        reserveItem9: item9
+        reserveItem10: item10
+        reserveItem11: item11
+        reserveItem12: item12
+        reserveItem13: item13
+        reserveItem14: item14
+        reserveItem15: item15
+        reserveItem16: item16
+        reserveItem17: item17
+        reserveItem18: item18
+        reserveItem19: item19
+        reserveItem20: item20

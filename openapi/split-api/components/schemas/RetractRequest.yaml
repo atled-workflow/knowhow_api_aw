@@ -1,0 +1,14 @@
+type: object
+pattern: workflow.RetractRequestModel
+properties:
+  docId:
+    description: 書類ID
+    type: integer
+  operatorCode:
+    description: |
+      引戻す処理者のユーザーコード<br>
+      *未指定の場合は、引戻し元ステップに設定されている任意の処理者で引戻される（どの処理者で引戻されるかは不定）
+    type: string
+  ruleStepCode:
+    description: 引戻し先ステップのコード
+    type: string

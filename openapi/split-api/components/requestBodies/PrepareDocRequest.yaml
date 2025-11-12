@@ -1,0 +1,18 @@
+content:
+  application/json:
+    schema:
+      required:
+        - applyUnitCode
+        - applyUserCode
+        - formCode
+        - ruleCode
+      allOf:
+        - $ref: ../schemas/PrepareDocRequest.yaml
+    example:
+      applyUnitCode: unit01
+      applyUserCode: user01
+      stepCode: null
+      referenceDocId: null
+      formCode: form01
+      ruleCode: rule01
+      criterionDate: 2024-10-31 00:00:00 JST

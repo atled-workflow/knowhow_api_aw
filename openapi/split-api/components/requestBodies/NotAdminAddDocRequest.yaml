@@ -1,0 +1,59 @@
+content:
+  application/json:
+    schema:
+      required:
+        - publicFormId
+        - docData
+        - formCode
+      allOf:
+        - $ref: ../schemas/NotAdminAddDocRequest.yaml
+    example:
+      publicFormId: 222
+      docData:
+        entryList:
+          entries:
+            - fieldType: TEXTFIELD
+              fieldId: textfield1
+              dataType: STRING
+              dataValue:
+                entryList:
+                  entries: []
+                value: null
+              name: 文字フィールド１
+            - fieldType: INTEGERFIELD
+              fieldId: integerfield1
+              dataType: INT
+              dataValue:
+                entryList:
+                  entries: []
+                value: null
+              name: 整数フィールド１
+      id: null
+      formCode: form01
+      criterionDate: 2024-10-31 00:00:00 JST
+      adminNo: null
+      listNames:
+        listName1: null
+        listName2: null
+        listName3: null
+        listName4: null
+        listName5: null
+        listName6: null
+        listName7: null
+        listName8: null
+        listName9: null
+        listName10: null
+        listName11: null
+        listName12: null
+        listName13: null
+        listName14: null
+        listName15: null
+        listName16: null
+        listName17: null
+        listName18: null
+        listName19: null
+        listName20: null
+      version: null
+      owner:
+        code: null
+        type: null

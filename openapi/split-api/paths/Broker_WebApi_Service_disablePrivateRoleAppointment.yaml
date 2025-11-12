@@ -1,0 +1,22 @@
+post:
+  tags:
+    - OrgAPI
+  summary: プライベートロール所属適用終了
+  description: >-
+    プライベートロール所属を適用終了します。
+  operationId: disablePrivateRoleAppointment
+  requestBody:
+    $ref: ../components/requestBodies/DisablePrivateRoleAppointmentRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/DisablePrivateRoleAppointmentResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

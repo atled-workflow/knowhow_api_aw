@@ -1,0 +1,35 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindUniversalRoleResponse.yaml
+    examples:
+      正常:
+        value:
+          universalRoleList:
+            entries:
+              - name: ユニバーサルロール
+                explanation: ユニバーサルロール
+                code: urole01
+                folderCode: null
+                importCode: urole01
+                id: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      該当するプライベートロールがない:
+        value:
+          universalRoleList:
+            entries: []
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

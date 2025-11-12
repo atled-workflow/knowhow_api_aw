@@ -1,0 +1,67 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/PrivateRoleResponse.yaml
+    examples:
+      正常:
+        value:
+          privateRole:
+            candidateList:
+              entries:
+                - type: USER
+                  roleGroupCode: null
+                  userCode: user01
+                  roleCode: null
+                  unitCode: null
+                  roleType: null
+                  criterionDate: 2024-10-31 00:00:00 JST
+                - type: ROLE
+                  roleGroupCode: null
+                  userCode: null
+                  roleCode: srole01
+                  unitCode: null
+                  roleType: SECTION
+                  criterionDate: 2024-10-31 00:00:00 JST
+            guidance:
+              text: 本文
+              subject: 件名
+            isWarnIfCandidateNotAssigned: null
+            name: プライベートロール
+            explanation: プライベートロール
+            code: prole01
+            folderCode: proleFolder
+            importCode: prole01
+            id: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          privateRole:
+            candidateList:
+              entries: []
+            guidance:
+              text: null
+              subject: null
+            isWarnIfCandidateNotAssigned: null
+            name: null
+            explanation: null
+            code: null
+            folderCode: null
+            importCode: null
+            id: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

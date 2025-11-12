@@ -1,0 +1,18 @@
+description: Successful response
+content:
+  text/html: {}
+  application/json:
+    examples:
+      リクエストが不正:
+        value:
+          html: null
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      存在しないパラメータを指定:
+        $ref: ../examples/responseErrorRequest.yaml

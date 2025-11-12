@@ -1,0 +1,36 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SCIMServiceResponse.yaml
+    example:
+      value:
+        schemas:
+          - urn:ietf:params:scim:api:messages:2.0:ServiceProviderConfig
+        patch:
+          supported: true
+        bulk:
+          supported: false
+          maxOperations: 0
+          maxPayloadSize: 0
+        filter:
+          supported: true
+          maxResults: 1000
+        changePassword:
+          supported: true
+        sort:
+          supported: false
+        etag:
+          supported: false
+        authenticationSchemas:
+          - type: oauth2
+            name: oauth2
+            description: oauth2
+            specUri: https://datatracker.ietf.org/doc/html/rfc6749
+            primary: true
+          - type: httpbasic
+            name: httpbasic
+            description: httpbasic
+            specUri: https://datatracker.ietf.org/doc/html/rfc7617
+            primary: false

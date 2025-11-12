@@ -1,0 +1,17 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - refDocId
+      type: object
+      pattern: doc.DocReferenceModel
+      properties:
+        docId:
+          description: 書類ID(参照先関連書類ID)
+          type: integer
+          example: 999
+        refDocId:
+          description: 関連書類ID(参照元関連書類ID)
+          type: integer
+          example: 998

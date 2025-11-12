@@ -1,0 +1,54 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/ListElectJournalResponse.yaml
+    examples:
+      正常:
+        value:
+          electJournalList:
+            entries:
+              - createDate: 2024-10-31 00:00:00 JST
+                addedOperator:
+                  userName: ユーザー1
+                  userCode: user01
+                  roleCode: null
+                  unitCode: unit01
+                  unitName: 組織１
+                  roleName: null
+                actionType: ADD
+                eventType: ADMIN_SELECT
+                docId: 999
+                deletedOperator:
+                  userName: null
+                  userCode: null
+                  roleCode: null
+                  unitCode: null
+                  unitName: null
+                  roleName: null
+                ruleStepHeader:
+                  name: 承認
+                  type: APPROVE
+                  index: 2
+                  code: STEP2
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          electJournalList:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

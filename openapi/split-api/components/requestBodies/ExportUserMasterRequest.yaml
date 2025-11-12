@@ -1,0 +1,12 @@
+content:
+  application/json:
+    schema:
+      required:
+        - code
+      type: object
+      pattern: usermaster.ExportUserMasterRequestModel
+      properties:
+        code:
+          description: コード
+          type: string
+          example: sample

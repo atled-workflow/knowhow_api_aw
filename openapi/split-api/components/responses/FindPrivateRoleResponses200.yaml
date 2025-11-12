@@ -1,0 +1,55 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/FindPrivateRoleResponse.yaml
+    examples:
+      正常:
+        value:
+          privateRoleList:
+            entries:
+              candidateList:
+                entries:
+                  - type: USER
+                    roleGroupCode: null
+                    userCode: user01
+                    roleCode: null
+                    unitCode: null
+                    roleType: null
+                    criterionDate: 2024-10-31 00:00:00 JST
+                  - type: ROLE
+                    roleGroupCode: null
+                    userCode: null
+                    roleCode: srole01
+                    unitCode: null
+                    roleType: SECTION
+                    criterionDate: 2024-10-31 00:00:00 JST
+              guidance:
+                text: 本文
+                subject: 件名
+              isWarnIfCandidateNotAssigned: null
+              name: プライベートロール
+              explanation: プライベートロール
+              code: prole01
+              folderCode: proleFolder
+              importCode: prole01
+              id: 999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      該当するプライベートロールがない:
+        value:
+          privateRoleList:
+            entries: []
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

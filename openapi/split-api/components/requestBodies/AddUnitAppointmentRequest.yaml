@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      required:
+        - unitCode
+        - userCode
+      allOf:
+        - $ref: ../schemas/AddUnitAppointmentRequest.yaml
+    example:
+      unitCode: unit01
+      userCode: user01
+      sectionRoleCode: srole01
+      availableDateFrom: 1900-01-01 00:00:00 JST
+      avalableDateTo: 2060-12-31 00:00:00 JST
+      criterionDate: 2024-10-31 00:00:00 JST

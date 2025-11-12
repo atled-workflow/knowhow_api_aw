@@ -1,0 +1,22 @@
+post:
+  tags:
+    - WorkflowAPI
+  summary: 書類論理削除
+  description: >-
+    書類を論理削除します。
+  operationId: delete
+  requestBody:
+    $ref: ../components/requestBodies/DeleteRequest.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/ResultStatusResponses200.yaml
+    '400':
+      $ref: ../components/responses/ErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/ErrorResponses401.yaml
+    '404':
+      $ref: ../components/responses/ErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/ErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/ErrorResponses503.yaml

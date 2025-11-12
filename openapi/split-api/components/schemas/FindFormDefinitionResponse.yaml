@@ -1,0 +1,298 @@
+type: object
+pattern: form.findFormDefinitionResponseModel
+properties:
+  form:
+    type: object
+    properties:
+      code:
+        description: フォームコード
+        type: string
+      name:
+        description: フォーム名称
+        type: string
+      rule:
+        description: |
+          回付ルール情報<br>
+          *ない場合は、空白配列
+        type: object
+        pattern: form.RuleStepNameListModel
+        properties:
+          entries:
+            type: array
+            items:
+              type: object
+              pattern: form.RuleStepNameModel
+              properties:
+                code:
+                  description: 回付ルールコード
+                  type: string
+                name:
+                  description: 回付ルール名称
+                  type: string
+                ruleField:
+                  description: |
+                    項目ルール<br>
+                    *リクエストのルールコードが未指定の場合は、空
+                    *リクエストのルールコードが設定された場合、設定したルールコードの内容のみ表示
+                  type: object
+                  pattern: form.StepFieldListModel
+                  properties:
+                    entries:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          fieldName:
+                            description: フィールド名
+                            type: string
+                          id:
+                            description: ID
+                            type: string
+                          invisible:
+                            description: |
+                              閲覧可<br>
+                              false：不可<br>
+                              true：可
+                            type: boolean
+                          disable:
+                            description: |
+                              編集可<br>
+                              false：不可<br>
+                              true：可
+                            type: boolean
+                          necessary:
+                            description: |
+                              必須<br>
+                              false：不可<br>
+                              true：可
+                            type: boolean
+      pages:
+        description: フォームページ情報
+        type: object
+        pattern: form.FormPageListModel
+        properties:
+          entries:
+            type: array
+            items:
+              type: object
+              properties:
+                fields:
+                  description: フィールド情報
+                  type: object
+                  pattern: form.FormFieldListModel
+                  properties:
+                    entries:
+                      type: array
+                      items:
+                        type: object
+                        pattern: form.FormFieldModel
+                        properties:
+                          name:
+                            description: フィールド名称
+                            type: string
+                          fieldNo:
+                            description: フィールド番号
+                            type: integer
+                          fieldId:
+                            description: フィールドID
+                            type: string
+                          fieldTypeNo:
+                            description: |
+                              フィールドタイプ番号<br>
+                              *詳細はfieldTypeを参照
+                            type: integer
+                          fieldType:
+                            description: |
+                              フィールドタイプ<br>
+                              |フィールドタイプ番号|フィールドタイプ名|意味|備考|
+                              |----|----|----|----|
+                              |9|TEXTFIELD|文字フィールド||
+                              |10|NUMBERFIELD|数値フィールド||
+                              |11|INTEGERFIELD|整数フィールド||
+                              |12|TEXTAREA|テキストエリア||
+                              |14|BUTTON|ボタン|AWでは表示されない|
+                              |15|RADIOBUTTON|ラジオボタン||
+                              |16|CHECKBOX|チェックボックス||
+                              |17|COMBOBOX|コンボボックス||
+                              |18|LISTBOX|リストボックス||
+                              |23|BARCODEFIELD|バーコード|AWでは画面に表示されないため、出力しない|
+                              |24|IMAGE|イメージ|AWでは表示されない|
+                              |25|YEARFIELD|西暦フィールド||
+                              |26|MONTHFIELD|月フィールド||
+                              |27|DAYFIELD|日フィールド||
+                              |28|WEEKFIELD|曜日フィールド||
+                              |29|STAMPFIELD|印影フィールド||
+                              |34|DATEFIELD|日時フィールド||
+                            type: string
+                            pattern: EnumFieldType
+                          dataType:
+                            description: |
+                              データタイプ<br>
+                              *既存モデルのフィールド<br>
+                              |値|意味|
+                              |----|----|
+                              |STRING|文字列|
+                              |DECIMAL|数値|
+                              |INT|整数値(int)|
+                              |TEXT|テキスト|
+                            type: string
+                            pattern: EnumDataType
+                          length:
+                            description: フィールド最大値
+                            type: integer
+                          tagName:
+                            description: タグ名
+                            type: string
+                          groupIdName:
+                            description: >
+                              グループID名<br>
+
+                              *グループ(表明細)を作った場合にID名が必須。グループでない、ラジオボタンなど一括設定の場合はnull。
+                            type: string
+                          isRequired:
+                            description: |
+                              必須フィールドフラグ<br>
+                              true：必須フィールド<br>
+                              false：非必須フィールド
+                            type: boolean
+                          isEditable:
+                            description: |
+                              編集禁止<br>
+                              false：無し<br>
+                              true：有り
+                            type: boolean
+                          isDisabled:
+                            description: |
+                              無効<br>
+                              false：無し<br>
+                              true：有り
+                            type: boolean
+                          isComma:
+                            description: |
+                              カンマ区切り<br>
+                              false：無し<br>
+                              true：有り
+                            type: boolean
+                          lookupValue:
+                            description: |
+                              ルックアップ設定<br>
+                              *ない場合は null<br>
+                              |値|意味|
+                              |----|----|
+                              |DOCUMENT_ID|書類ID|
+                              |LOGIN_USER_CODE|ログインユーザーコード|
+                              |LOGIN_USER_NAME|ログインユーザー名|
+                              |LOGIN_USER_LOCALIZED_NAME|ログインユーザーローカル名|
+                              |LOGIN_USER_KANA|ログインユーザーカナ|
+                              |LOGIN_USER_STAMPNAME|ログインユーザーの印影上の表示名|
+                              |LOGIN_USER_LOGINID|ログインユーザーログインID|
+                              |LOGIN_USER_MAILADDRESS|ログインユーザーメールアドレス|
+                              |LOGIN_USER_RESERVE1～20|ログインユーザー予備項目1～20|
+                              |LOGIN_UNIT_CODE|ログインユーザー組織コード|
+                              |LOGIN_UNIT_OFFICIAL_NAME|ログインユーザー組織名称|
+                              |LOGIN_UNIT_NAME|ログインユーザー組織画面表示名称|
+                              |LOGIN_UNIT_LOCALIZED_NAME|ログインユーザー組織ローカル表示名称|
+                              |LOGIN_UNIT_RESERVE1～20|ログインユーザー組織予備項目1～20|
+                              |LOGIN_SECTIONROLE_CODE|ログインユーザーセクションロールコード|
+                              |LOGIN_SECTIONROLE_NAME|ログインユーザーセクションロール名称|
+                              |LOGIN_SECTIONROLE_RANK|ログインユーザーセクションロールランク|
+                              |USER_CODE|申請ユーザーコード|
+                              |USER_NAME|申請ユーザー名|
+                              |USER_LOCALIZED_NAME|申請ユーザーローカル名|
+                              |USER_KANA|申請ユーザーカナ|
+                              |USER_STAMPNAME|申請ユーザーの印影上の表示名|
+                              |USER_LOGINID|申請ユーザーログインID|
+                              |USER_MAILADDRESS|申請ユーザーメールアドレス|
+                              |USER_RESERVE1～20|申請ユーザー予備項目1～20|
+                              |UNIT_CODE|申請組織コード|
+                              |UNIT_OFFICIAL_NAME|背院生組織名称|
+                              |UNIT_NAME|申請組織画面表示名称|
+                              |UNIT_LOCALIZED_NAME|申請組織ローカル表示名称|
+                              |UNIT_RESERVE1～20|申請組織予備項目1～20|
+                              |SECTIONROLE_CODE|申請組織セクションロールコード|
+                              |SECTIONROLE_NAME|申請組織セクションロール名称|
+                              |SECTIONROLE_RANK|申請組織セクションロールランク|
+                              |FORM_CODE|フォームコード|
+                              |FORM_NAME|フォーム名称|
+                              |RULE_CODE|回付ルールコード|
+                              |RULE_NAME|回付ルール名称|
+                              |BAGGAGE_CREATE_DATE|申請日|
+                              |APLLY_CRITERION_DATE|申請基準日|
+                              |BAGGAGE_FIX_DATE|承認完了日|
+                              |DOC_REGIST_DATE|作成日|
+                              |DOC_ID|書類ID|
+                              |DOC_VERSION|書類バージョン|
+                              |DOC_LISTNAME1～20|件名1～20|
+                              |DOC_ADMINNO|書類管理番号|
+                              |DOC_OWNER_NAME|書類オーナー名称|
+                              |DOC_FORM_CODE|フォームコード|
+                              |DOC_FORM_NAME|フォーム名称|
+                              |TASK_SEQUENCE|順序|
+                              |TASK_NODE_CLASS|ステップ種類|
+                              |TASK_NODE_NAME|ステップ名称|
+                              |TASK_UNIT_CODE|組織コード|
+                              |TASK_UNIT_NAME|組織名称|
+                              |TASK_ROLE_CODE|ロールコード|
+                              |TASK_ROLE_NAME|ロール名称|
+                              |TASK_USER_CODE|ユーザーコード|
+                              |TASK_USER_NAME|ユーザー名称|
+                              |TASK_PRINCIPAL_UNIT_CODE|被代理組織コード|
+                              |TASK_PRINCIPAL_UNIT_NAME|被代理組織名称|
+                              |TASK_PRINCIPAL_ROLE_CODE|被代理ロールコード|
+                              |TASK_PRINCIPAL_ROLE_NAME|被代理ロール名称|
+                              |TASK_PRINCIPAL_USER_CODE|被代理ユーザーコード|
+                              |TASK_PRINCIPAL_USER_NAME|被代理ユーザー名称|
+                              |TASK_EFFECTNAME|処理名称|
+                              |TASK_EFFECTDATE|処理日時|
+                              |TASK_ISPROXYUSER|代理ユーザーかどうか|
+                              |TASK_ISDEPRIVED|引上げされたかどうか|
+                              |TASK_DEPRIVED_NODE_NAME|引上げステップ名称|
+                              |TASK_COMMENT|処理時コメント|
+                              |TASK_RESERVE1～20|タスク予備項目1～10|
+                            type: string
+                            pattern: FormFieldLookupValueType
+                          defaultValue:
+                            description: |
+                              初期値<br>
+                              *ない場合は空白("")
+                            type: string
+                          dateFormat:
+                            description: |
+                              日付書式<br>
+                              *ない場合は null<br>
+                              |値|意味|
+                              |----|----|
+                              |YYYYMMDD_ZERO|yyyy年MM月dd日(前0あり)|
+                              |YYYYMMDD_NONZERO|yyyy年MM月dd日(前0なし)|
+                              |YYYYMMDD_ZERO_SLASH|yyyy/MM/dd(前0あり)|
+                              |YYYYMMDD_ZERO_HYPHEN|yyyy-MM-dd(前0あり)|
+                              |YYYYMMDD_NONZERO_SLASH|yyyy/MM/dd(前0なし)|
+                              |YYYYMMDD_NONZERO_HYPHEN|yyyy-MM-dd(前0なし)|
+                              |YYYYMMDD_ZERO_DEF|yyyyMMdd(前0あり)|
+                              |YYYYMMDD_NONZERO_DEF|yyyyMMdd(前0なし)|
+                              |YYYYMM_ZERO_SLASH|yyyy/MM(前0あり)|
+                              |YYYYMM_ZERO_HYPHEN|yyyy-MM(前0あり)|
+                              |YYYYMM_NONZERO_SLASH|yyyy/MM(前0なし)|
+                              |YYYYMM_NONZERO_HYPHEN|yyyy-MM(前0なし)|
+                              |MMDD_ZERO_SLASH|MM/DD(前0あり)|
+                              |MMDD_ZERO_HYHPEN|MM-dd(前0あり)|
+                              |MMDD_NONZERO_SLASH|MM/DD(前0なし)|
+                              |MMDD_NONZERO_HYHPEN|MM-dd(前0なし)|
+                              |YYYYMM_ZERO_DEF|yyyyMM(前0あり)|
+                              |YYYYMM_NONZERO_DEF|yyyyMM(前0なし)|
+                              |MMDD_ZERO_DEF|MMDD(前0あり)|
+                              |MMDD_NONZERO_DEF|MMDD(前0なし)|
+                            type: string
+                            pattern: XWEBDateFormatType
+                          fieldList:
+                            description: |
+                              フィールド一覧<br>
+                              *空で表示、本APIではグループID名を使用するため表明細も判断可能
+                            type: object
+                          maxRows:
+                            description: |
+                              表明細行数<br>
+                              *ない場合は 0
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

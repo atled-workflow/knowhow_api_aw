@@ -1,0 +1,14 @@
+description: |
+  データ型<br>
+  |パラメータ|説明|
+  |----|----|
+  |BOOLEAN|真偽値|
+  |DATE|日付|
+  |DATETIME|日時|
+  |DECIMAL|整数|
+  |INT|整数値(int)|
+  |LONG|整数値(long)|
+  |STRING|文字列|
+  |TEXT|テキスト|
+type: string
+pattern: common.EnumDataType

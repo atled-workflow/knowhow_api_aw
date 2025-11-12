@@ -1,0 +1,22 @@
+type: object
+pattern: org.FindPrivateRoleAppointmentResponseModel
+properties:
+  privateRoleAppointmentList:
+    description: プライベートロール所属一覧
+    type: object
+    pattern: org.PrivateRoleAppointmentListModel
+    properties:
+      entries:
+        description: プライベートロール所属情報
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              description: プライベートロール所属のid
+              type: integer
+          allOf:
+            - $ref: ./AddPrivateRoleAppointmentRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

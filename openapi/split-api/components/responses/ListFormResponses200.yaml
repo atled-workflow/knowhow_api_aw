@@ -1,0 +1,94 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/ListFormResponse.yaml
+    examples:
+      正常:
+        value:
+          formProject:
+            entries:
+              - name: public
+                id: 100001
+                form:
+                  entries:
+                    - name: test
+                      id: 999
+                      type: TEMPLATE
+                      version: 1
+                      fieldList:
+                        entries: []
+                      explanation: null
+                      minorVersion: 0
+                      majorVersion: 1
+                      code: test
+                      projectCode: null
+                      isForcAutoCalc: true
+                      isReferenceOnly: false
+                      isInsertTrailRequired: false
+                      validityDateTo: 2060-12-31 00:00:00 JST
+                      xwfFileName: test.xwf
+                      latestVersion: 1
+                      trailFormCode: null
+                      insertTrailPosition: null
+                      validityDateFrom: 1900-01-01 00:00:00 JST
+                      tableName:
+                        entries:
+                          - name: aw1
+                          - name: aw2
+                      isInsertTrail: false
+                      pageCount: 1
+                code: null
+                formCount: 1
+              - name: 採番テスト
+                id: 100010
+                form:
+                  entries:
+                    - name: レイヤ
+                      id: 998
+                      type: MAIN
+                      version: 1.2
+                      fieldList:
+                        entries: []
+                      explanation: null
+                      minorVersion: 2
+                      majorVersion: 1
+                      code: lay
+                      projectCode: saiban
+                      isForcAutoCalc: true
+                      isReferenceOnly: false
+                      isInsertTrailRequired: false
+                      validityDateTo: 2060-12-31 00:00:00 JST
+                      xwfFileName: lay.xwf
+                      latestVersion: 1.2
+                      trailFormCode: null
+                      insertTrailPosition: BACK
+                      validityDateFrom: 1900-01-01 00:00:00 JST
+                      tableName:
+                        entries:
+                          - name: aw3
+                      isInsertTrail: true
+                      pageCount: 1
+                code: soumu
+                formCount: 1
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      パラメータが不正:
+        value:
+          formProject:
+            entries: []
+          resultStatus:
+            status: FAIL
+            messageList:
+              entries:
+                - text: '{エラーメッセージ}'
+                  code: '{エラーコード}'
+            text: サービス実行時にエラーが発生しました。
+            code: AWPCMN0000
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

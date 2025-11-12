@@ -1,0 +1,10 @@
+type: object
+pattern: doc.DocCommentResponseModel
+properties:
+  docComment:
+    description: 書類コメント情報
+    allOf:
+      - $ref: ./docComment.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

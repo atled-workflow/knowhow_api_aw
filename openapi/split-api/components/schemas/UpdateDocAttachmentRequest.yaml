@@ -1,0 +1,43 @@
+type: object
+pattern: doc.DocAttachmentModel
+properties:
+  id:
+    description: |
+      添付ID<br>
+      *「書類添付情報一覧取得API」で取得した書類添付IDを指定
+    type: integer
+  docId:
+    description: 書類ID
+    type: integer
+  type:
+    description: |
+      添付書類タイプ<br>
+      *更新前と同じ値を設定してください<br>
+      指定可能な値<br>
+      |パラメータ|説明|
+      |----|----|
+      |FILE|添付ファイル|
+      |URL|URL|
+    type: string
+    pattern: doc.EnumDocAttachmetType
+  explanation:
+    description: 添付の説明
+    type: string
+  name:
+    description: |
+      添付名称<br>
+      *type が URL の場合に必須
+    type: string
+  url:
+    description: |
+      URL<br>
+      *type が URL の場合に必須
+    type: string
+    pattern: rule.RuleStepHeaderModel
+  storageFile:
+    description: |
+      添付ファイル<br>
+      *type が FILE の場合に multipart/form-data の2つ目に設定します。
+      *storageFileとして明示的に指定しても無視されます。
+    type: string
+    pattern: system.StorageFileModel

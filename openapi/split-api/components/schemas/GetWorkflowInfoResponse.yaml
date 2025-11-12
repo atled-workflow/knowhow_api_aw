@@ -1,0 +1,85 @@
+type: object
+pattern: workflow.WorkflowInfoResponseModel
+properties:
+  workflowInfo:
+    type: object
+    pattern: workflow.WorkflowInfoModel
+    properties:
+      createOperator:
+        description: 作成者
+        allOf:
+          - $ref: ./commonOperatorModel.yaml
+      currentRuleStepHeaderList:
+        description: 現在ステップ情報リスト
+        type: object
+        pattern: rule.RuleStepHeaderListModel
+        properties:
+          entries:
+            description: 現在ステップヘッダ情報
+            type: array
+            items:
+              allOf:
+                - $ref: ./ruleStepHeader.yaml
+      applyOperator:
+        description: 申請者
+        allOf:
+          - $ref: ./commonOperatorModel.yaml
+      formName:
+        description: フォーム名
+        type: string
+      criterionDate:
+        description: 基準日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+      createDate:
+        description: 作成日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+      lastOperator:
+        description: 最終処理者
+        allOf:
+          - $ref: ./commonOperatorModel.yaml
+      docId:
+        description: 書類ID
+        type: integer
+      approvedDate:
+        description: 承認完了日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+      applyDate:
+        description: 申請日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+      formCode:
+        description: フォームコード
+        type: string
+      workflowState:
+        allOf:
+          - $ref: ./EnumWorkflowStateType.yaml
+      proxyApplyOperator:
+        description: 代理申請者
+        allOf:
+          - $ref: ./commonOperatorModel.yaml
+      ruleCode:
+        description: ルールコード
+        type: string
+      ruleName:
+        description: ルール名
+        type: string
+      lastOperateDate:
+        description: 最終処理日
+        type: string
+        pattern: >-
+          ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+          (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

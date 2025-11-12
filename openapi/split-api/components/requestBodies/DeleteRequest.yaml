@@ -1,0 +1,12 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: workflow.DeleteRequestModel
+      properties:
+        id:
+          description: 書類ID
+          type: integer
+          example: 999

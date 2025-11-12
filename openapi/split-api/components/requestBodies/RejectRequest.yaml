@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - docId
+        - ruleStepCode
+        - comment
+      allOf:
+        - $ref: ../schemas/RejectRequest.yaml
+    example:
+      docId: 999
+      operatorCode: user002
+      ruleStepCode: STEP3
+      comment: 却下

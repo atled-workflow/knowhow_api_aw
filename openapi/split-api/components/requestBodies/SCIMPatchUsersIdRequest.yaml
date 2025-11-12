@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/SCIMPatchUsersIdRequest.yaml
+    example:
+      schemas:
+        - urn:ietf:params:scim:api:messages:2.0:PatchOp
+      Operations:
+        - op: Replace
+          path: emails[type eq \"work\"].value
+          value: user001@atled.jp
+        - op: Add
+          path: locale
+          value: jp

@@ -1,0 +1,111 @@
+type: object
+pattern: doc.DocModel
+properties:
+  publicFormId:
+    description: |
+      公開フォームID<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: string
+  docData:
+    description: |
+      書類データ<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値に対し、任意の値を指定
+    type: object
+    pattern: doc.DocDataModel
+    required:
+      - entryList
+    properties:
+      entryList:
+        description: 各フィールドのデータ
+        type: object
+        pattern: doc.DocDataEntryListModel
+        properties:
+          entries:
+            type: array
+            items:
+              type: object
+              pattern: doc.DocDataEntryModel
+              required:
+                - name
+                - fieldType
+                - fieldId
+                - dataType
+              properties:
+                name:
+                  description: |
+                    フィールド名<br>
+                    *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+                  type: string
+                fieldType:
+                  description: |
+                    フィールドタイプ<br>
+                    *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+                  type: string
+                fieldId:
+                  description: |
+                    フィールドID<br>
+                    *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+                  type: string
+                dataType:
+                  description: |
+                    データタイプ<br>
+                    *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+                  type: string
+                dataValue:
+                  description: |
+                    フィールドの値<br>
+                    *任意の値を指定
+                  type: object
+                  pattern: doc.DocDataValueModel
+                  properties:
+                    value:
+                      description: |
+                        フィールドの値<br>
+                        *任意の値を指定<br>
+                        *通常フィールドの場合のみ
+                    entryList:
+                      description: |
+                        表明細フィールドのリスト<br>
+                        *任意の値を指定<br>
+                        *表明細フィールドの場合のみ
+                      type: object
+                      pattern: doc.DocDataEntryModel
+  id:
+    description: |
+      書類ID<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: integer
+  formCode:
+    description: |
+      フォームコード<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+  criterionDate:
+    description: |
+      基準日<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: string
+    pattern: >-
+      ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+      (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+  adminNo:
+    description: |
+      書類管理番号<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: string
+  listNames:
+    description: |
+      件名項目<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: object
+    pattern: doc.DocListNamesModel
+  version:
+    description: |
+      書類バージョン<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: string
+  owner:
+    description: |
+      書類オーナー<br>
+      *「書類データ取得API」または「新規書類データ保存API」で取得した値を指定
+    type: object
+    pattern: doc.DocOwnerModel

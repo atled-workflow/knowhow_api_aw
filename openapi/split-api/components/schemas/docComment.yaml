@@ -1,0 +1,20 @@
+type: object
+pattern: doc.DocCommentModel
+properties:
+  id:
+    description: コメントID
+    type: integer
+  comment:
+    description: コメント
+    type: string
+  ruleStepHeader:
+    description: コメントが付加されているステップ
+    allOf:
+      - $ref: ./ruleStepHeader.yaml
+  effectorType:
+    allOf:
+      - $ref: ./effectorType.yaml
+  operationInfo:
+    description: 操作情報
+    allOf:
+      - $ref: ./operationInfo.yaml

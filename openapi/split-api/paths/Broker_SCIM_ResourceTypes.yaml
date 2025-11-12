@@ -1,0 +1,22 @@
+get:
+  tags:
+    - SCIMAPI/ResourceTypes
+  summary: リソース情報取得
+  description:
+    SCIMサーバーがサポートするリソースタイプ（USER、GROUP）に関する情報を提供するためのエンドポイントです。
+  operationId: SCIMResourceTypes
+  responses:
+    '200':
+      $ref: "../components/responses/SCIMResourceTypesResponses200.yaml"
+    '400':
+      $ref: ../components/responses/SCIMErrorResponses400.yaml
+    '401':
+      $ref: ../components/responses/SCIMErrorResponses401.yaml
+    '403':
+      $ref: ../components/responses/SCIMErrorResponses403.yaml
+    '404':
+      $ref: ../components/responses/SCIMErrorResponses404.yaml
+    '500':
+      $ref: ../components/responses/SCIMErrorResponses500.yaml
+    '503':
+      $ref: ../components/responses/SCIMErrorResponses503.yaml

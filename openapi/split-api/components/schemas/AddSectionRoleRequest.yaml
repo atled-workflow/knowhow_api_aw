@@ -1,0 +1,23 @@
+type: object
+pattern: org.SectionRoleModel
+properties:
+  code:
+    description: セクションロールコード
+    type: string
+  importCode:
+    description: インポートコード
+    type: string
+  name:
+    description: ロール名称
+    type: string
+  explanation:
+    description: 備考
+    type: string
+  folderCode:
+    description: |
+      セクションロールフォルダ<br>
+      *セクションロールフォルダ直下に作成する場合はnullを指定
+    type: string
+  rank:
+    description: ランク
+    type: integer

@@ -1,0 +1,11 @@
+value:
+  publicFolderList:
+    entries: []
+  resultStatus:
+    status: FAIL
+    messageList:
+      entries:
+        - text: '{エラーメッセージ}'
+          code: '{エラーコード}'
+    text: サービス実行時にエラーが発生しました。
+    code: AWPCMN0000

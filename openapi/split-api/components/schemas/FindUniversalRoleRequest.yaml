@@ -1,0 +1,48 @@
+type: object
+pattern: org.FindUniversalRoleRequestModel
+properties:
+  condition:
+    description: ユニバーサルロール検索条件
+    type: object
+    pattern: org.UniversalRoleConditionModel
+    properties:
+      code:
+        description: ユニバーサルロールコード
+        type: string
+      name:
+        description: ユニバーサルロール名称
+        type: string
+      columnValueConditionList:
+        description: 任意検索条件一覧
+        type: object
+        pattern: org.UniversalRoleColumnValueConditionListModel
+        properties:
+          entries:
+            description: 任意検索条件
+            type: array
+            items:
+              type: object
+              pattern: org.UniversalRoleColumnValueConditionModel
+              properties:
+                column:
+                  description: |
+                    フィールド値タイプ<br>
+                    指定可能な値<br>
+                    |パラメータ|説明|
+                    |----|----|
+                    |Code|コード|
+                    |ImportId|インポートコード|
+                    |Name|名称|
+                    |Rank|ランク|
+                  type: string
+                  pattern: org.EnumUniversalRoleFieldType
+                compareOperatorType:
+                  allOf:
+                    - $ref: ./compareOperatorType.yaml
+                value:
+                  description: 値
+                  type: string
+          logicalOperator:
+            description: |
+              任意検索全体の AND / OR<br>
+              *AND または OR を指定

@@ -1,0 +1,14 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: doc.DocAttachmentModel
+      properties:
+        id:
+          description: |
+            添付ID<br>
+            *「書類添付情報一覧取得API」で取得した書類添付IDを指定
+          type: integer
+          example: 9999

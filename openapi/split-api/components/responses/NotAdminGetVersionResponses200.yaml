@@ -1,0 +1,20 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/NotAdminGetVersionResponse.yaml
+    examples:
+      正常:
+        value:
+          versionInfo:
+            version: 3.1.1
+            buildNumber: 9999999
+          resultStatus:
+            status: SUCCESS
+            messageList:
+              entries: []
+            text: null
+            code: null
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

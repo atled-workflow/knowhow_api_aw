@@ -1,0 +1,22 @@
+type: object
+pattern: org.FindDelegationAppointmentResponseModel
+properties:
+  delegationAppointmentList:
+    description: 権限委譲情報一覧
+    type: object
+    pattern: org.DelegationAppointmentListModel
+    properties:
+      entries:
+        description: 権限委譲情報
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              description: 権限委譲のid
+              type: integer
+          allOf:
+            - $ref: ./AddDelegationAppointmentRequest.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

@@ -1,0 +1,17 @@
+type: object
+pattern: doc.ListDocCommentResponseModel
+properties:
+  docCommentList:
+    description: 書類コメント一覧
+    type: object
+    pattern: doc.DocCommentListModel
+    properties:
+      entries:
+        description: 書類コメント情報
+        type: array
+        items:
+          allOf:
+            - $ref: ./docComment.yaml
+  resultStatus:
+    allOf:
+      - $ref: ./resultStatus.yaml

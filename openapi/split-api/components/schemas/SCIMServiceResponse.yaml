@@ -1,0 +1,112 @@
+type: object
+properties:
+  schemas:
+    description: |
+      スキーマ情報<br>
+      *"urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig " 固定
+    type: string
+  patch:
+    description: パッチ
+    type: object
+    properties:
+      supported:
+        description: |
+          サポート有無<br>
+          *true固定
+        type: boolean
+  bulk:
+    description: バルク
+    type: object
+    properties:
+      supported:
+        description: |
+          サポート有無<br>
+          *false固定
+        type: boolean
+      maxOperation:
+        description: |
+          最大操作数<br>
+          バルクリクエスト内で許可される操作の最大数を示します。<br>
+          *0固定
+        type: integer
+      maxPayloadSize:
+        description: |
+          最大サイズ<br>
+          バルクリクエストのペイロード（データのサイズ）に許可される最大サイズを示します。<br>
+          *0固定
+        type: integer
+  filter:
+    description: フィルター
+    type: object
+    properties:
+      supported:
+        description: |
+          サポート有無<br>
+          *true固定
+        type: boolean
+      maxResults:
+        description: |
+          最大検索数<br>
+          *1000固定
+        type: integer
+  changePassword:
+    description: パスワード変更有無
+    type: object
+    properties:
+      supported:
+        description: |
+          サポート有無<br>
+          *true固定
+        type: boolean
+  sort:
+    description: ソート
+    type: object
+    properties:
+      supported:
+        description: |
+          サポート有無<br>
+          *false固定
+        type: boolean
+  etag:
+    description: etag
+    type: object
+    properties:
+      supported:
+        description: |
+          サポート有無<br>
+          *false固定
+        type: boolean
+  authenticationSchemas:
+    description: 認証スキーマ
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          description: |
+            認証スキーマ種別<br>
+            Oauth2認証の場合："oauth2"固定<br>
+            Basic認証の場合："httpbasic"固定
+          type: string
+        name:
+          description: |
+            認証名称<br>
+            Oauth2認証の場合："oauth2"固定<br>
+            Basic認証の場合："httpbasic"固定
+          type: string
+        description:
+          description: |
+            認証の説明<br>
+            Oauth2認証の場合："oauth2"固定<br>
+            Basic認証の場合："httpbasic"固定
+          type: string
+        specUri:
+          description: |
+            認証仕様URI<br>
+            Oauth2認証の場合："https://datatracker.ietf.org/doc/html/rfc6749"固定<br>
+            Basic認証の場合："https://datatracker.ietf.org/doc/html/rfc7617"固定
+          type: string
+        primary:
+          description: |
+            優先<br>
+            Oauth2認証の場合："TRUE"固定、Basic認証の場合："FALSE"固定

@@ -1,0 +1,23 @@
+content:
+  application/json:
+    schema:
+      required:
+        - id
+      type: object
+      pattern: org.UnitModel
+      properties:
+        id:
+          description: |
+            適用終了対象組織のID<br>
+            *「組織作成API」または「組織参照API」で取得した値を指定
+          type: integer
+          example: 999
+        availableDateTo:
+          description: |
+            適用終了日<br>
+            *null の場合は 2060/12/31
+          type: string
+          pattern: >-
+            ^((19|20)[0-9]{2})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])
+            (2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9]) JST$
+          example: 2024-12-31 00:00:00 JST

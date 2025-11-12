@@ -1,0 +1,13 @@
+description: Successful response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/PrepareDocResponse.yaml
+    examples:
+      正常:
+        $ref: ../examples/SuccessDocResponse.yaml
+      パラメータが不正:
+        $ref: ../examples/ErrorDocResponse.yaml
+      リクエストが不正:
+        $ref: ../examples/responseErrorRequest.yaml

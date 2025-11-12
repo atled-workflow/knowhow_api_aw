@@ -1,0 +1,14 @@
+description: 対象回付ルール一覧
+type: object
+pattern: org.TargetRuleListModel
+properties:
+  entries:
+    description: 回付ルールコードのリスト
+    type: array
+    items:
+      type: object
+      pattern: org.TargetRuleModel
+      properties:
+        ruleCode:
+          description: 回付ルールコード
+          type: string

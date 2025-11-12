@@ -1,0 +1,20 @@
+content:
+  application/json:
+    schema:
+      required:
+        - userCode
+        - content
+      type: object
+      pattern: site.FindProjectRequestModel
+      properties:
+        userCode:
+          description: ユーザーコード
+          type: string
+          example: user01
+        content:
+          description: |
+            コンテンツ<br>
+            *FormMan
+          type: string
+          pattern: site.EnumBaseContentAccessType
+          example: FormMan
