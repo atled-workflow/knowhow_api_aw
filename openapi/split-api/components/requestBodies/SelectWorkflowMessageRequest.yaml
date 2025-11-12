@@ -18,7 +18,6 @@ content:
             - $ref: ../schemas/WorkflowMessageRequest.yaml
     example:
       condition:
-        - userCode: user01
-          workflowMessageType: APPROVE_REQUEST
-        - userCode: user01
-          workflowMessageType: CONFIRM_REQUEST
+        userCode: user01
+        workflowMessageType: APPROVE_REQUEST
+        formCode: form01
