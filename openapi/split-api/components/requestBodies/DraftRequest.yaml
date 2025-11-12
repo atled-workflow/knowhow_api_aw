@@ -7,6 +7,13 @@ content:
         - applyUserCode
         - formCode
         - ruleCode
+      type: object
+      pattern: workflow.DraftRequestModel
+      properties:
+        operateUserCode:
+          description:
+            処理者ユーザーコード<br>
+            *書類作成/申請APIを行うとき、本APIで指定したユーザーをoperateUserCodeに指定するか、指定したユーザーで実行する必要があります。
       allOf:
         - $ref: ../schemas/DraftRequest.yaml
     example:
@@ -16,3 +23,4 @@ content:
       applyUserCode: user01
       formCode: form01
       ruleCode: rule01
+      operateUserCode: user01
