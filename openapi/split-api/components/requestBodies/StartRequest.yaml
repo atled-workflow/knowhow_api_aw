@@ -11,7 +11,10 @@ content:
       pattern: workflow.StartRequestModel
       properties:
         operateUserCode:
-          description: 処理者ユーザーコード
+          description: 
+            処理者ユーザーコード<br>
+            *書類下書き保存APIを実行していた場合、同じ値を指定する必要があります。<br>
+            *指定なしの場合は実行ユーザー
           type: string
         comment:
           description: コメント
